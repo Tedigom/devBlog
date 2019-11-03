@@ -1,134 +1,134 @@
 ![lego-708086_1920.jpg](https://images.velog.io/post-images/tedigom/c2875230-f8b8-11e9-a757-dd517f114496/lego-7080861920.jpg)
-¸¶ÀÌÅ©·Î ¼­ºñ½º ¾ÆÅ°ÅØÃÄ¸¦ ÇÑ¸¶µð·Î ´ÙÀ½°ú °°ÀÌ Ç¥ÇöÇÒ ¼ö ÀÖ½À´Ï´Ù.
+ë§ˆì´í¬ë¡œ ì„œë¹„ìŠ¤ ì•„í‚¤í…ì³ë¥¼ í•œë§ˆë””ë¡œ ë‹¤ìŒê³¼ ê°™ì´ í‘œí˜„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-_**"ÇÏ³ªÀÇ Å« ¾îÇÃ¸®ÄÉÀÌ¼ÇÀ» ¿©·¯°³ÀÇ ÀÛÀº ¾îÇÃ¸®ÄÉÀÌ¼ÇÀ¸·Î ÂÉ°³¾î º¯°æ°ú Á¶ÇÕÀÌ °¡´ÉÇÏµµ·Ï ¸¸µç ¾ÆÅ°ÅØÃÄ"**_
+_**"í•˜ë‚˜ì˜ í° ì–´í”Œë¦¬ì¼€ì´ì…˜ì„ ì—¬ëŸ¬ê°œì˜ ìž‘ì€ ì–´í”Œë¦¬ì¼€ì´ì…˜ìœ¼ë¡œ ìª¼ê°œì–´ ë³€ê²½ê³¼ ì¡°í•©ì´ ê°€ëŠ¥í•˜ë„ë¡ ë§Œë“  ì•„í‚¤í…ì³"**_
 
-ÀÌ°ÍÀº ¸¶Ä¡ ·¹°í³îÀÌ¿Í ºñ½ÁÇÏ´Ù°í º¼ ¼ö ÀÖ´Âµ¥¿ä, ÀÛÀº ·¹°íºí·Ï(Microservice) ÇÏ³ªÇÏ³ª¸¦ ºÙ¿© ¾î¶°ÇÑ Å« °á°ú¹°À» ¸¸µå´Â ÇüÅÂ¸¦ MSA¶ó°í ¸»¾¸µå¸± ¼ö ÀÖ°Ú½À´Ï´Ù.
+ì´ê²ƒì€ ë§ˆì¹˜ ë ˆê³ ë†€ì´ì™€ ë¹„ìŠ·í•˜ë‹¤ê³  ë³¼ ìˆ˜ ìžˆëŠ”ë°ìš”, ìž‘ì€ ë ˆê³ ë¸”ë¡(Microservice) í•˜ë‚˜í•˜ë‚˜ë¥¼ ë¶™ì—¬ ì–´ë– í•œ í° ê²°ê³¼ë¬¼ì„ ë§Œë“œëŠ” í˜•íƒœë¥¼ MSAë¼ê³  ë§ì”€ë“œë¦´ ìˆ˜ ìžˆê² ìŠµë‹ˆë‹¤.
   
-# MSAÀÇ µîÀå¹è°æ
+# MSAì˜ ë“±ìž¥ë°°ê²½
 
-MSAÀÇ µîÀåÀ» »ìÆìº¸±â À§ÇØ¼­´Â, ±âÁ¸¿¡ ¿ì¸®°¡ ¾î¶°ÇÑ ¹æ½ÄÀ¸·Î °³¹ßÀ» ÁøÇàÇØ ¿Ô´ÂÁö¿¡ ´ëÇØ »ìÆì º¼ ÇÊ¿ä°¡ ÀÖ½À´Ï´Ù.
+MSAì˜ ë“±ìž¥ì„ ì‚´íŽ´ë³´ê¸° ìœ„í•´ì„œëŠ”, ê¸°ì¡´ì— ìš°ë¦¬ê°€ ì–´ë– í•œ ë°©ì‹ìœ¼ë¡œ ê°œë°œì„ ì§„í–‰í•´ ì™”ëŠ”ì§€ì— ëŒ€í•´ ì‚´íŽ´ ë³¼ í•„ìš”ê°€ ìžˆìŠµë‹ˆë‹¤.
 
 ### Monolithic Architecture
 
 ![monolithic_vs_microservices.jpg](https://images.velog.io/post-images/tedigom/8586da80-f8b4-11e9-856d-cbf01881f02b/monolithicvsmicroservices.jpg)
 
-Monolithic Architecture¶õ, ¼ÒÇÁÆ®¿þ¾îÀÇ ¸ðµç ±¸¼º¿ä¼Ò°¡ ÇÑ ÇÁ·ÎÁ§Æ®¿¡ ÅëÇÕµÇ¾îÀÖ´Â ÇüÅÂÀÔ´Ï´Ù. 
+Monolithic Architectureëž€, ì†Œí”„íŠ¸ì›¨ì–´ì˜ ëª¨ë“  êµ¬ì„±ìš”ì†Œê°€ í•œ í”„ë¡œì íŠ¸ì— í†µí•©ë˜ì–´ìžˆëŠ” í˜•íƒœìž…ë‹ˆë‹¤. 
 
-¾ÆÁ÷±îÁö´Â ¸¹Àº ¼ÒÇÁÆ®¿þ¾î°¡ Monolithic ÇüÅÂ·Î ±¸ÇöµÇ¾î ÀÖ°í, ¼Ò±Ô¸ð ÇÁ·ÎÁ§Æ®¿¡´Â Monolithic Architecture°¡ ÈÎ¾À ÇÕ¸®ÀûÀÔ´Ï´Ù. °£´ÜÇÑ ArchitectureÀÌ°í, À¯Áöº¸¼ö°¡ ¿ëÀÌÇÏ±â ¶§¹®ÀÌÁÒ.
+ì•„ì§ê¹Œì§€ëŠ” ë§Žì€ ì†Œí”„íŠ¸ì›¨ì–´ê°€ Monolithic í˜•íƒœë¡œ êµ¬í˜„ë˜ì–´ ìžˆê³ , ì†Œê·œëª¨ í”„ë¡œì íŠ¸ì—ëŠ” Monolithic Architectureê°€ í›¨ì”¬ í•©ë¦¬ì ìž…ë‹ˆë‹¤. ê°„ë‹¨í•œ Architectureì´ê³ , ìœ ì§€ë³´ìˆ˜ê°€ ìš©ì´í•˜ê¸° ë•Œë¬¸ì´ì£ .
 
-ÇÏÁö¸¸ ÀÏÁ¤ ±Ô¸ð ÀÌ»óÀÇ ¼­ºñ½º, È¤Àº ¼ö¹é¸íÀÇ °³¹ßÀÚ°¡ ÅõÀÔµÇ´Â ÇÁ·ÎÁ§Æ®¿¡¼­ Monolithic ArchitectureÀº ¶Ñ·ÇÇÑ ÇÑ°è¸¦ º¸ÀÔ´Ï´Ù.
+í•˜ì§€ë§Œ ì¼ì • ê·œëª¨ ì´ìƒì˜ ì„œë¹„ìŠ¤, í˜¹ì€ ìˆ˜ë°±ëª…ì˜ ê°œë°œìžê°€ íˆ¬ìž…ë˜ëŠ” í”„ë¡œì íŠ¸ì—ì„œ Monolithic Architectureì€ ëšœë ·í•œ í•œê³„ë¥¼ ë³´ìž…ë‹ˆë‹¤.
 ###  
- * ¼­ºñ½º/ÇÁ·ÎÁ§Æ®°¡ Ä¿Áö¸é Ä¿Áú¼ö·Ï, ¿µÇâµµ ÆÄ¾Ç ¹× ÀüÃ¼ ½Ã½ºÅÛ ±¸Á¶ÀÇ ÆÄ¾Ç¿¡ ¾î·Á¿òÀÌ ÀÖ½À´Ï´Ù. 
+ * ì„œë¹„ìŠ¤/í”„ë¡œì íŠ¸ê°€ ì»¤ì§€ë©´ ì»¤ì§ˆìˆ˜ë¡, ì˜í–¥ë„ íŒŒì•… ë° ì „ì²´ ì‹œìŠ¤í…œ êµ¬ì¡°ì˜ íŒŒì•…ì— ì–´ë ¤ì›€ì´ ìžˆìŠµë‹ˆë‹¤. 
  
- * ºôµå ½Ã°£ ¹× Å×½ºÆ®½Ã°£, ±×¸®°í ¹èÆ÷½Ã°£ÀÌ ±âÇÏ±Þ¼öÀûÀ¸·Î ´Ã¾î³ª°Ô µË´Ï´Ù.  
+ * ë¹Œë“œ ì‹œê°„ ë° í…ŒìŠ¤íŠ¸ì‹œê°„, ê·¸ë¦¬ê³  ë°°í¬ì‹œê°„ì´ ê¸°í•˜ê¸‰ìˆ˜ì ìœ¼ë¡œ ëŠ˜ì–´ë‚˜ê²Œ ë©ë‹ˆë‹¤.  
  
- * ¼­ºñ½º¸¦ ºÎºÐÀûÀ¸·Î scale-outÇÏ±â°¡ Èûµì´Ï´Ù.   
+ * ì„œë¹„ìŠ¤ë¥¼ ë¶€ë¶„ì ìœ¼ë¡œ scale-outí•˜ê¸°ê°€ íž˜ë“­ë‹ˆë‹¤.   
  
- * ºÎºÐÀÇ Àå¾Ö°¡ ÀüÃ¼ ¼­ºñ½ºÀÇ Àå¾Ö·Î ÀÌ¾îÁö´Â °æ¿ì°¡ ¹ß»ýÇÏ°ÔµË´Ï´Ù.
+ * ë¶€ë¶„ì˜ ìž¥ì• ê°€ ì „ì²´ ì„œë¹„ìŠ¤ì˜ ìž¥ì• ë¡œ ì´ì–´ì§€ëŠ” ê²½ìš°ê°€ ë°œìƒí•˜ê²Œë©ë‹ˆë‹¤.
 
 ###  
-MSA´Â ºñÁî´Ï½º ¹ÎÃ¸¼º(Business agility)°ú °ü·ÃÀÌ Å®´Ï´Ù. ~(°æ¿µÀÚ´Â ÁÁ¾ÆÇÏÁö¸¸ °³¹ßÀÚ´Â ½È¾îÇÑ´Ù´Â MSA..)~  ¼­ºñ½º³ª ÇÁ·ÎÁ§Æ®°¡ Å©°í, º¹ÀâÇÏ°í, Àå±âÀûÀ¸·Î ¿î¿µµÉ ¼ö·Ï, MSAÀÇ ÀåÁ¡ÀÌ ´õ¿í µå·¯³ª°ÔµË´Ï´Ù.
+MSAëŠ” ë¹„ì¦ˆë‹ˆìŠ¤ ë¯¼ì²©ì„±(Business agility)ê³¼ ê´€ë ¨ì´ í½ë‹ˆë‹¤. ~(ê²½ì˜ìžëŠ” ì¢‹ì•„í•˜ì§€ë§Œ ê°œë°œìžëŠ” ì‹«ì–´í•œë‹¤ëŠ” MSA..)~  ì„œë¹„ìŠ¤ë‚˜ í”„ë¡œì íŠ¸ê°€ í¬ê³ , ë³µìž¡í•˜ê³ , ìž¥ê¸°ì ìœ¼ë¡œ ìš´ì˜ë  ìˆ˜ë¡, MSAì˜ ìž¥ì ì´ ë”ìš± ë“œëŸ¬ë‚˜ê²Œë©ë‹ˆë‹¤.
 
-> _MSA ÀÌÀü¿¡µµ CBD, SOA µî Monolith¸¦ ³í¸®/¹°¸®ÀûÀ¸·Î ±¸Á¶È­ ÇÏ±â À§ÇÑ ³ë·ÂµéÀÌ ÀÖ¾î¿Ô½À´Ï´Ù. 
-MSA´Â Å« ÀÇ¹Ì¿¡¼­ SOAÀÇ ºÎºÐÁýÇÕÀ¸·Î ¿©°ÜÁö°í ÀÖÀ¸¸ç, ´ÙÀ½¿¡ ±âÈ¸°¡ µÉ ¶§ SOA¿Í MSA¿¡ ´ëÇØ ÀÚ¼¼È÷ ´Ù·ïº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù._ 
+> _MSA ì´ì „ì—ë„ CBD, SOA ë“± Monolithë¥¼ ë…¼ë¦¬/ë¬¼ë¦¬ì ìœ¼ë¡œ êµ¬ì¡°í™” í•˜ê¸° ìœ„í•œ ë…¸ë ¥ë“¤ì´ ìžˆì–´ì™”ìŠµë‹ˆë‹¤. 
+MSAëŠ” í° ì˜ë¯¸ì—ì„œ SOAì˜ ë¶€ë¶„ì§‘í•©ìœ¼ë¡œ ì—¬ê²¨ì§€ê³  ìžˆìœ¼ë©°, ë‹¤ìŒì— ê¸°íšŒê°€ ë  ë•Œ SOAì™€ MSAì— ëŒ€í•´ ìžì„¸ížˆ ë‹¤ë¤„ë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤._ 
 
-# Micro serviceÀÇ Á¤ÀÇ
-Martin Folwer´Â MSA¿¡ ´ëÇØ ¾Æ·¡¿Í °°ÀÌ ¼³¸íÇÏ¿´½À´Ï´Ù.  
+# Micro serviceì˜ ì •ì˜
+Martin FolwerëŠ” MSAì— ëŒ€í•´ ì•„ëž˜ì™€ ê°™ì´ ì„¤ëª…í•˜ì˜€ìŠµë‹ˆë‹¤.  
 
 _"the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery."_ 
 
-ÂüÁ¶ : https://martinfowler.com/articles/microservices.html
+ì°¸ì¡° : https://martinfowler.com/articles/microservices.html
 ###  
-À§ ¹®Àå¿¡¼­ Àú´Â _**small services, each running in its own process(½º½º·Î µ¹¾Æ °¥ ¼ö ÀÖ´Â ÀÛÀº ¼­ºñ½º)**_ ¿Í, _**independently deployable(µ¶¸³Àû ¹èÆ÷ °¡´É)**_ ÀÌ MicroService¸¦ ¼³¸íÇØ ÁÙ ¼ö ÀÖ´Â °¡Àå ÇÙ½ÉÀûÀÎ ¹®±¸¶ó°í »ý°¢ÇÕ´Ï´Ù.
+ìœ„ ë¬¸ìž¥ì—ì„œ ì €ëŠ” _**small services, each running in its own process(ìŠ¤ìŠ¤ë¡œ ëŒì•„ ê°ˆ ìˆ˜ ìžˆëŠ” ìž‘ì€ ì„œë¹„ìŠ¤)**_ ì™€, _**independently deployable(ë…ë¦½ì  ë°°í¬ ê°€ëŠ¥)**_ ì´ MicroServiceë¥¼ ì„¤ëª…í•´ ì¤„ ìˆ˜ ìžˆëŠ” ê°€ìž¥ í•µì‹¬ì ì¸ ë¬¸êµ¬ë¼ê³  ìƒê°í•©ë‹ˆë‹¤.
 ![lego-708086_1920.jpg](https://images.velog.io/post-images/tedigom/c2875230-f8b8-11e9-a757-dd517f114496/lego-7080861920.jpg)
-¸¶ÀÌÅ©·Î ¼­ºñ½º ¾ÆÅ°ÅØÃÄ¸¦ ÇÑ¸¶µð·Î ´ÙÀ½°ú °°ÀÌ Ç¥ÇöÇÒ ¼ö ÀÖ½À´Ï´Ù.
+ë§ˆì´í¬ë¡œ ì„œë¹„ìŠ¤ ì•„í‚¤í…ì³ë¥¼ í•œë§ˆë””ë¡œ ë‹¤ìŒê³¼ ê°™ì´ í‘œí˜„í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-_**"ÇÏ³ªÀÇ Å« ¾îÇÃ¸®ÄÉÀÌ¼ÇÀ» ¿©·¯°³ÀÇ ÀÛÀº ¾îÇÃ¸®ÄÉÀÌ¼ÇÀ¸·Î ÂÉ°³¾î º¯°æ°ú Á¶ÇÕÀÌ °¡´ÉÇÏµµ·Ï ¸¸µç ¾ÆÅ°ÅØÃÄ"**_
+_**"í•˜ë‚˜ì˜ í° ì–´í”Œë¦¬ì¼€ì´ì…˜ì„ ì—¬ëŸ¬ê°œì˜ ìž‘ì€ ì–´í”Œë¦¬ì¼€ì´ì…˜ìœ¼ë¡œ ìª¼ê°œì–´ ë³€ê²½ê³¼ ì¡°í•©ì´ ê°€ëŠ¥í•˜ë„ë¡ ë§Œë“  ì•„í‚¤í…ì³"**_
 
-ÀÌ°ÍÀº ¸¶Ä¡ ·¹°í³îÀÌ¿Í ºñ½ÁÇÏ´Ù°í º¼ ¼ö ÀÖ´Âµ¥¿ä, ÀÛÀº ·¹°íºí·Ï(Microservice) ÇÏ³ªÇÏ³ª¸¦ ºÙ¿© ¾î¶°ÇÑ Å« °á°ú¹°À» ¸¸µå´Â ÇüÅÂ¸¦ MSA¶ó°í ¸»¾¸µå¸± ¼ö ÀÖ°Ú½À´Ï´Ù.
+ì´ê²ƒì€ ë§ˆì¹˜ ë ˆê³ ë†€ì´ì™€ ë¹„ìŠ·í•˜ë‹¤ê³  ë³¼ ìˆ˜ ìžˆëŠ”ë°ìš”, ìž‘ì€ ë ˆê³ ë¸”ë¡(Microservice) í•˜ë‚˜í•˜ë‚˜ë¥¼ ë¶™ì—¬ ì–´ë– í•œ í° ê²°ê³¼ë¬¼ì„ ë§Œë“œëŠ” í˜•íƒœë¥¼ MSAë¼ê³  ë§ì”€ë“œë¦´ ìˆ˜ ìžˆê² ìŠµë‹ˆë‹¤.
   
-# MSAÀÇ µîÀå¹è°æ
+# MSAì˜ ë“±ìž¥ë°°ê²½
 
-MSAÀÇ µîÀåÀ» »ìÆìº¸±â À§ÇØ¼­´Â, ±âÁ¸¿¡ ¿ì¸®°¡ ¾î¶°ÇÑ ¹æ½ÄÀ¸·Î °³¹ßÀ» ÁøÇàÇØ ¿Ô´ÂÁö¿¡ ´ëÇØ »ìÆì º¼ ÇÊ¿ä°¡ ÀÖ½À´Ï´Ù.
+MSAì˜ ë“±ìž¥ì„ ì‚´íŽ´ë³´ê¸° ìœ„í•´ì„œëŠ”, ê¸°ì¡´ì— ìš°ë¦¬ê°€ ì–´ë– í•œ ë°©ì‹ìœ¼ë¡œ ê°œë°œì„ ì§„í–‰í•´ ì™”ëŠ”ì§€ì— ëŒ€í•´ ì‚´íŽ´ ë³¼ í•„ìš”ê°€ ìžˆìŠµë‹ˆë‹¤.
 
 ### Monolithic Architecture
 
 ![monolithic_vs_microservices.jpg](https://images.velog.io/post-images/tedigom/8586da80-f8b4-11e9-856d-cbf01881f02b/monolithicvsmicroservices.jpg)
 
-Monolithic Architecture¶õ, ¼ÒÇÁÆ®¿þ¾îÀÇ ¸ðµç ±¸¼º¿ä¼Ò°¡ ÇÑ ÇÁ·ÎÁ§Æ®¿¡ ÅëÇÕµÇ¾îÀÖ´Â ÇüÅÂÀÔ´Ï´Ù. 
+Monolithic Architectureëž€, ì†Œí”„íŠ¸ì›¨ì–´ì˜ ëª¨ë“  êµ¬ì„±ìš”ì†Œê°€ í•œ í”„ë¡œì íŠ¸ì— í†µí•©ë˜ì–´ìžˆëŠ” í˜•íƒœìž…ë‹ˆë‹¤. 
 
-¾ÆÁ÷±îÁö´Â ¸¹Àº ¼ÒÇÁÆ®¿þ¾î°¡ Monolithic ÇüÅÂ·Î ±¸ÇöµÇ¾î ÀÖ°í, ¼Ò±Ô¸ð ÇÁ·ÎÁ§Æ®¿¡´Â Monolithic Architecture°¡ ÈÎ¾À ÇÕ¸®ÀûÀÔ´Ï´Ù. °£´ÜÇÑ ArchitectureÀÌ°í, À¯Áöº¸¼ö°¡ ¿ëÀÌÇÏ±â ¶§¹®ÀÌÁÒ.
+ì•„ì§ê¹Œì§€ëŠ” ë§Žì€ ì†Œí”„íŠ¸ì›¨ì–´ê°€ Monolithic í˜•íƒœë¡œ êµ¬í˜„ë˜ì–´ ìžˆê³ , ì†Œê·œëª¨ í”„ë¡œì íŠ¸ì—ëŠ” Monolithic Architectureê°€ í›¨ì”¬ í•©ë¦¬ì ìž…ë‹ˆë‹¤. ê°„ë‹¨í•œ Architectureì´ê³ , ìœ ì§€ë³´ìˆ˜ê°€ ìš©ì´í•˜ê¸° ë•Œë¬¸ì´ì£ .
 
-ÇÏÁö¸¸ ÀÏÁ¤ ±Ô¸ð ÀÌ»óÀÇ ¼­ºñ½º, È¤Àº ¼ö¹é¸íÀÇ °³¹ßÀÚ°¡ ÅõÀÔµÇ´Â ÇÁ·ÎÁ§Æ®¿¡¼­ Monolithic ArchitectureÀº ¶Ñ·ÇÇÑ ÇÑ°è¸¦ º¸ÀÔ´Ï´Ù.
+í•˜ì§€ë§Œ ì¼ì • ê·œëª¨ ì´ìƒì˜ ì„œë¹„ìŠ¤, í˜¹ì€ ìˆ˜ë°±ëª…ì˜ ê°œë°œìžê°€ íˆ¬ìž…ë˜ëŠ” í”„ë¡œì íŠ¸ì—ì„œ Monolithic Architectureì€ ëšœë ·í•œ í•œê³„ë¥¼ ë³´ìž…ë‹ˆë‹¤.
 ###  
- * ¼­ºñ½º/ÇÁ·ÎÁ§Æ®°¡ Ä¿Áö¸é Ä¿Áú¼ö·Ï, ¿µÇâµµ ÆÄ¾Ç ¹× ÀüÃ¼ ½Ã½ºÅÛ ±¸Á¶ÀÇ ÆÄ¾Ç¿¡ ¾î·Á¿òÀÌ ÀÖ½À´Ï´Ù. 
+ * ì„œë¹„ìŠ¤/í”„ë¡œì íŠ¸ê°€ ì»¤ì§€ë©´ ì»¤ì§ˆìˆ˜ë¡, ì˜í–¥ë„ íŒŒì•… ë° ì „ì²´ ì‹œìŠ¤í…œ êµ¬ì¡°ì˜ íŒŒì•…ì— ì–´ë ¤ì›€ì´ ìžˆìŠµë‹ˆë‹¤. 
  
- * ºôµå ½Ã°£ ¹× Å×½ºÆ®½Ã°£, ±×¸®°í ¹èÆ÷½Ã°£ÀÌ ±âÇÏ±Þ¼öÀûÀ¸·Î ´Ã¾î³ª°Ô µË´Ï´Ù.  
+ * ë¹Œë“œ ì‹œê°„ ë° í…ŒìŠ¤íŠ¸ì‹œê°„, ê·¸ë¦¬ê³  ë°°í¬ì‹œê°„ì´ ê¸°í•˜ê¸‰ìˆ˜ì ìœ¼ë¡œ ëŠ˜ì–´ë‚˜ê²Œ ë©ë‹ˆë‹¤.  
  
- * ¼­ºñ½º¸¦ ºÎºÐÀûÀ¸·Î scale-outÇÏ±â°¡ Èûµì´Ï´Ù.   
+ * ì„œë¹„ìŠ¤ë¥¼ ë¶€ë¶„ì ìœ¼ë¡œ scale-outí•˜ê¸°ê°€ íž˜ë“­ë‹ˆë‹¤.   
  
- * ºÎºÐÀÇ Àå¾Ö°¡ ÀüÃ¼ ¼­ºñ½ºÀÇ Àå¾Ö·Î ÀÌ¾îÁö´Â °æ¿ì°¡ ¹ß»ýÇÏ°ÔµË´Ï´Ù.
+ * ë¶€ë¶„ì˜ ìž¥ì• ê°€ ì „ì²´ ì„œë¹„ìŠ¤ì˜ ìž¥ì• ë¡œ ì´ì–´ì§€ëŠ” ê²½ìš°ê°€ ë°œìƒí•˜ê²Œë©ë‹ˆë‹¤.
 
 ###  
-MSA´Â ºñÁî´Ï½º ¹ÎÃ¸¼º(Business agility)°ú °ü·ÃÀÌ Å®´Ï´Ù. ~(°æ¿µÀÚ´Â ÁÁ¾ÆÇÏÁö¸¸ °³¹ßÀÚ´Â ½È¾îÇÑ´Ù´Â MSA..)~  ¼­ºñ½º³ª ÇÁ·ÎÁ§Æ®°¡ Å©°í, º¹ÀâÇÏ°í, Àå±âÀûÀ¸·Î ¿î¿µµÉ ¼ö·Ï, MSAÀÇ ÀåÁ¡ÀÌ ´õ¿í µå·¯³ª°ÔµË´Ï´Ù.
+MSAëŠ” ë¹„ì¦ˆë‹ˆìŠ¤ ë¯¼ì²©ì„±(Business agility)ê³¼ ê´€ë ¨ì´ í½ë‹ˆë‹¤. ~(ê²½ì˜ìžëŠ” ì¢‹ì•„í•˜ì§€ë§Œ ê°œë°œìžëŠ” ì‹«ì–´í•œë‹¤ëŠ” MSA..)~  ì„œë¹„ìŠ¤ë‚˜ í”„ë¡œì íŠ¸ê°€ í¬ê³ , ë³µìž¡í•˜ê³ , ìž¥ê¸°ì ìœ¼ë¡œ ìš´ì˜ë  ìˆ˜ë¡, MSAì˜ ìž¥ì ì´ ë”ìš± ë“œëŸ¬ë‚˜ê²Œë©ë‹ˆë‹¤.
 
-> _MSA ÀÌÀü¿¡µµ CBD, SOA µî Monolith¸¦ ³í¸®/¹°¸®ÀûÀ¸·Î ±¸Á¶È­ ÇÏ±â À§ÇÑ ³ë·ÂµéÀÌ ÀÖ¾î¿Ô½À´Ï´Ù. 
-MSA´Â Å« ÀÇ¹Ì¿¡¼­ SOAÀÇ ºÎºÐÁýÇÕÀ¸·Î ¿©°ÜÁö°í ÀÖÀ¸¸ç, ´ÙÀ½¿¡ ±âÈ¸°¡ µÉ ¶§ SOA¿Í MSA¿¡ ´ëÇØ ÀÚ¼¼È÷ ´Ù·ïº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù._ 
+> _MSA ì´ì „ì—ë„ CBD, SOA ë“± Monolithë¥¼ ë…¼ë¦¬/ë¬¼ë¦¬ì ìœ¼ë¡œ êµ¬ì¡°í™” í•˜ê¸° ìœ„í•œ ë…¸ë ¥ë“¤ì´ ìžˆì–´ì™”ìŠµë‹ˆë‹¤. 
+MSAëŠ” í° ì˜ë¯¸ì—ì„œ SOAì˜ ë¶€ë¶„ì§‘í•©ìœ¼ë¡œ ì—¬ê²¨ì§€ê³  ìžˆìœ¼ë©°, ë‹¤ìŒì— ê¸°íšŒê°€ ë  ë•Œ SOAì™€ MSAì— ëŒ€í•´ ìžì„¸ížˆ ë‹¤ë¤„ë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤._ 
 
-# Micro serviceÀÇ Á¤ÀÇ
-Martin Folwer´Â MSA¿¡ ´ëÇØ ¾Æ·¡¿Í °°ÀÌ ¼³¸íÇÏ¿´½À´Ï´Ù.  
+# Micro serviceì˜ ì •ì˜
+Martin FolwerëŠ” MSAì— ëŒ€í•´ ì•„ëž˜ì™€ ê°™ì´ ì„¤ëª…í•˜ì˜€ìŠµë‹ˆë‹¤.  
 
 _"the microservice architectural style is an approach to developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanisms, often an HTTP resource API. These services are built around business capabilities and independently deployable by fully automated deployment machinery."_ 
 
-ÂüÁ¶ : https://martinfowler.com/articles/microservices.html
+ì°¸ì¡° : https://martinfowler.com/articles/microservices.html
 ###  
-À§ ¹®Àå¿¡¼­ Àú´Â _**small services, each running in its own process(½º½º·Î µ¹¾Æ °¥ ¼ö ÀÖ´Â ÀÛÀº ¼­ºñ½º)**_ ¿Í, _**independently deployable(µ¶¸³Àû ¹èÆ÷ °¡´É)**_ ÀÌ MicroService¸¦ ¼³¸íÇØ ÁÙ ¼ö ÀÖ´Â °¡Àå ÇÙ½ÉÀûÀÎ ¹®±¸¶ó°í »ý°¢ÇÕ´Ï´Ù.
+ìœ„ ë¬¸ìž¥ì—ì„œ ì €ëŠ” _**small services, each running in its own process(ìŠ¤ìŠ¤ë¡œ ëŒì•„ ê°ˆ ìˆ˜ ìžˆëŠ” ìž‘ì€ ì„œë¹„ìŠ¤)**_ ì™€, _**independently deployable(ë…ë¦½ì  ë°°í¬ ê°€ëŠ¥)**_ ì´ MicroServiceë¥¼ ì„¤ëª…í•´ ì¤„ ìˆ˜ ìžˆëŠ” ê°€ìž¥ í•µì‹¬ì ì¸ ë¬¸êµ¬ë¼ê³  ìƒê°í•©ë‹ˆë‹¤.
 
 ![pic_1.png](https://images.velog.io/post-images/tedigom/575c07d0-f980-11e9-ac2c-696993348d8a/pic1.png)
 
 
-martin FowlerÀÇ ÆäÀÌÁö¸¦ ÂüÁ¶ÇÏ¿©, MSA¿¡¼­ÀÇ (micro)Service¸¦ Á¦ ³ª¸§ÀÇ »ý°¢À¸·Î Á¤¸®ÇØ º¸¾Ò½À´Ï´Ù.  
+martin Fowlerì˜ íŽ˜ì´ì§€ë¥¼ ì°¸ì¡°í•˜ì—¬, MSAì—ì„œì˜ (micro)Serviceë¥¼ ì œ ë‚˜ë¦„ì˜ ìƒê°ìœ¼ë¡œ ì •ë¦¬í•´ ë³´ì•˜ìŠµë‹ˆë‹¤.  
 ###  
-* °¢°¢ÀÇ ¼­ºñ½º´Â ±× Å©±â°¡ ÀÛÀ» »Ó, ¼­ºñ½º ÀÚÃ¼´Â ÇÏ³ªÀÇ ¸ð³î¸®Æ½ ¾ÆÅ°ÅØÃÄ¿Í À¯»çÇÑ ±¸Á¶¸¦ °¡Áü
+* ê°ê°ì˜ ì„œë¹„ìŠ¤ëŠ” ê·¸ í¬ê¸°ê°€ ìž‘ì„ ë¿, ì„œë¹„ìŠ¤ ìžì²´ëŠ” í•˜ë‚˜ì˜ ëª¨ë†€ë¦¬í‹± ì•„í‚¤í…ì³ì™€ ìœ ì‚¬í•œ êµ¬ì¡°ë¥¼ ê°€ì§
 
-* °¢°¢ÀÇ ¼­ºñ½º´Â µ¶¸³ÀûÀ¸·Î ¹èÆ÷°¡ °¡´ÉÇØ¾ßÇÔ.  
+* ê°ê°ì˜ ì„œë¹„ìŠ¤ëŠ” ë…ë¦½ì ìœ¼ë¡œ ë°°í¬ê°€ ê°€ëŠ¥í•´ì•¼í•¨.  
 
-* °¢°¢ÀÇ ¼­ºñ½º´Â ´Ù¸¥ ¼­ºñ½º¿¡ ´ëÇÑ ÀÇÁ¸¼ºÀÌ ÃÖ¼ÒÈ­ µÇ¾î¾ßÇÔ  
+* ê°ê°ì˜ ì„œë¹„ìŠ¤ëŠ” ë‹¤ë¥¸ ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì˜ì¡´ì„±ì´ ìµœì†Œí™” ë˜ì–´ì•¼í•¨  
 
-* °¢ ¼­ºñ½º´Â °³º° ÇÁ·Î¼¼½º·Î ±¸µ¿ µÇ¸ç, REST¿Í °°Àº °¡º­¿î ¹æ½ÄÀ¸·Î Åë½ÅµÇ¾î¾ß ÇÔ.
+* ê° ì„œë¹„ìŠ¤ëŠ” ê°œë³„ í”„ë¡œì„¸ìŠ¤ë¡œ êµ¬ë™ ë˜ë©°, RESTì™€ ê°™ì€ ê°€ë²¼ìš´ ë°©ì‹ìœ¼ë¡œ í†µì‹ ë˜ì–´ì•¼ í•¨.
 ###  
 
-ÀÏ¹ÝÀûÀ¸·Î ÇÏ³ªÀÇ ¼­ºñ½º´Â ÇÏ³ªÀÇ ±â´ÉÀÌ¸ç, ÇÏ³ªÀÇ ÇÁ·ÎÁ§Æ®¶ó°í º¼ ¼ö ÀÖÁö¸¸, ºñÁî´Ï½º¿Í ½Ã½ºÅÛÀÇ ½ÇÁ¤¿¡ ¸Â°Ô ¼­ºñ½ºÀÇ ¹üÀ§(Å©±â)¸¦ ¼³Á¤ÇÏ´Â °ÍÀÌ Áß¿äÇÕ´Ï´Ù.
+ì¼ë°˜ì ìœ¼ë¡œ í•˜ë‚˜ì˜ ì„œë¹„ìŠ¤ëŠ” í•˜ë‚˜ì˜ ê¸°ëŠ¥ì´ë©°, í•˜ë‚˜ì˜ í”„ë¡œì íŠ¸ë¼ê³  ë³¼ ìˆ˜ ìžˆì§€ë§Œ, ë¹„ì¦ˆë‹ˆìŠ¤ì™€ ì‹œìŠ¤í…œì˜ ì‹¤ì •ì— ë§žê²Œ ì„œë¹„ìŠ¤ì˜ ë²”ìœ„(í¬ê¸°)ë¥¼ ì„¤ì •í•˜ëŠ” ê²ƒì´ ì¤‘ìš”í•©ë‹ˆë‹¤.
 
-# MSAÀÇ Àå´ÜÁ¡
-### MSAÀÇ ÀåÁ¡
-¿ì¼± MSAÀÇ ÀåÁ¡¿¡ ´ëÇØ ¾Ë¾Æº¸µµ·Ï ÇÏ°Ú½À´Ï´Ù. MSA´Â ¼­ºñ½º°¡ Ä¿Áö¸é¼­ »ý°å´ø Monolithic ArchitectureÀÇ ¹®Á¦Á¡µéÀ» ¾î´ÀÁ¤µµ º¸¿ÏÇØ ÁÙ ¼ö ÀÖ½À´Ï´Ù.
+# MSAì˜ ìž¥ë‹¨ì 
+### MSAì˜ ìž¥ì 
+ìš°ì„  MSAì˜ ìž¥ì ì— ëŒ€í•´ ì•Œì•„ë³´ë„ë¡ í•˜ê² ìŠµë‹ˆë‹¤. MSAëŠ” ì„œë¹„ìŠ¤ê°€ ì»¤ì§€ë©´ì„œ ìƒê²¼ë˜ Monolithic Architectureì˜ ë¬¸ì œì ë“¤ì„ ì–´ëŠì •ë„ ë³´ì™„í•´ ì¤„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
 
-* ¹èÆ÷(deployment) °üÁ¡
-	* ¼­ºñ½º º° °³º° ¹èÆ÷ °¡´É ( ¹èÆ÷ ½Ã ÀüÃ¼ ¼­ºñ½ºÀÇ Áß´ÜÀÌ ¾øÀ½)
-    * ¿ä±¸»çÇ×À» ½Å¼ÓÇÏ°Ô ¹Ý¿µÇÏ¿© ºü¸£°Ô ¹èÆ÷ÇÒ ¼ö ÀÖÀ½.  
+* ë°°í¬(deployment) ê´€ì 
+	* ì„œë¹„ìŠ¤ ë³„ ê°œë³„ ë°°í¬ ê°€ëŠ¥ ( ë°°í¬ ì‹œ ì „ì²´ ì„œë¹„ìŠ¤ì˜ ì¤‘ë‹¨ì´ ì—†ìŒ)
+    * ìš”êµ¬ì‚¬í•­ì„ ì‹ ì†í•˜ê²Œ ë°˜ì˜í•˜ì—¬ ë¹ ë¥´ê²Œ ë°°í¬í•  ìˆ˜ ìžˆìŒ.  
     ###  
 
-* È®Àå(scaling) °üÁ¡
-	* Æ¯Á¤ ¼­ºñ½º¿¡ ´ëÇÑ È®Àå¼ºÀÌ ¿ëÀÌÇÔ.
-    * Å¬¶ó¿ìµå »ç¿ë¿¡ ÀûÇÕÇÑ ¾ÆÅ°ÅØÃÄ.
+* í™•ìž¥(scaling) ê´€ì 
+	* íŠ¹ì • ì„œë¹„ìŠ¤ì— ëŒ€í•œ í™•ìž¥ì„±ì´ ìš©ì´í•¨.
+    * í´ë¼ìš°ë“œ ì‚¬ìš©ì— ì í•©í•œ ì•„í‚¤í…ì³.
     ###  
-* Àå¾Ö(failure) °üÁ¡
-	* Àå¾Ö°¡ ÀüÃ¼ ¼­ºñ½º·Î È®ÀåµÉ °¡´É¼ºÀÌ ÀûÀ½
-    * ºÎºÐÀû Àå¾Ö¿¡ ´ëÇÑ °Ý¸®°¡ ¼ö¿ùÇÔ
+* ìž¥ì• (failure) ê´€ì 
+	* ìž¥ì• ê°€ ì „ì²´ ì„œë¹„ìŠ¤ë¡œ í™•ìž¥ë  ê°€ëŠ¥ì„±ì´ ì ìŒ
+    * ë¶€ë¶„ì  ìž¥ì• ì— ëŒ€í•œ ê²©ë¦¬ê°€ ìˆ˜ì›”í•¨
 ###  
 
-ÀÌ¿Ü¿¡µµ, ½Å±â¼úÀÇ Àû¿ëÀÌ À¯¿¬ÇÏ°í, ¼­ºñ½º¸¦ polyglotÇÏ°Ô °³¹ß/¿î¿µ ÇÒ ¼ö ÀÖ´Ù´Â ÀåÁ¡ÀÌ ÀÖ½À´Ï´Ù.
+ì´ì™¸ì—ë„, ì‹ ê¸°ìˆ ì˜ ì ìš©ì´ ìœ ì—°í•˜ê³ , ì„œë¹„ìŠ¤ë¥¼ polyglotí•˜ê²Œ ê°œë°œ/ìš´ì˜ í•  ìˆ˜ ìžˆë‹¤ëŠ” ìž¥ì ì´ ìžˆìŠµë‹ˆë‹¤.
 ###  
-### MSAÀÇ ´ÜÁ¡
-Monolithic ArchitectureÀº ´Ü¼øÇÑ ¾ÆÅ°ÅØÃÄÀÎµ¥ ºñÇØ MSA´Â º¸´Ù º¹ÀâÇÑ ¾ÆÅ°ÅØÃÄ·Î, ÀüÃ¼ ¼­ºñ½º°¡ Ä¿Áü¿¡ µû¶ó ±× º¹Àâµµ°¡ ±âÇÏ±Þ¼öÀûÀ¸·Î ´Ã¾î³¯ ¼ö ÀÖ½À´Ï´Ù.
+### MSAì˜ ë‹¨ì   
+Monolithic Architectureì€ ë‹¨ìˆœí•œ ì•„í‚¤í…ì³ì¸ë° ë¹„í•´ MSAëŠ” ë³´ë‹¤ ë³µìž¡í•œ ì•„í‚¤í…ì³ë¡œ, ì „ì²´ ì„œë¹„ìŠ¤ê°€ ì»¤ì§ì— ë”°ë¼ ê·¸ ë³µìž¡ë„ê°€ ê¸°í•˜ê¸‰ìˆ˜ì ìœ¼ë¡œ ëŠ˜ì–´ë‚  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-* ¼º´É - ¼­ºñ½º °£ È£Ãâ ½Ã API¸¦ »ç¿ëÇÏ±â ¶§¹®¿¡, Åë½Å ºñ¿ëÀÌ³ª, Latency°¡ ±×¸¸Å­ ´Ã¾î³ª°Ô µË´Ï´Ù.
+* ì„±ëŠ¥ - ì„œë¹„ìŠ¤ ê°„ í˜¸ì¶œ ì‹œ APIë¥¼ ì‚¬ìš©í•˜ê¸° ë•Œë¬¸ì—, í†µì‹  ë¹„ìš©ì´ë‚˜, Latencyê°€ ê·¸ë§Œí¼ ëŠ˜ì–´ë‚˜ê²Œ ë©ë‹ˆë‹¤.
 ###  
-* Å×½ºÆ® / Æ®·£Àè¼Ç - ¼­ºñ½º°¡ ºÐ¸®µÇ¾î ÀÖ±â ¶§¹®¿¡ Å×½ºÆ®¿Í Æ®·£Àè¼ÇÀÇ º¹Àâµµ°¡ Áõ°¡ÇÏ°í, ¸¹Àº ÀÚ¿øÀ» ÇÊ¿ä·Î ÇÕ´Ï´Ù.
+* í…ŒìŠ¤íŠ¸ / íŠ¸ëžœìž­ì…˜ - ì„œë¹„ìŠ¤ê°€ ë¶„ë¦¬ë˜ì–´ ìžˆê¸° ë•Œë¬¸ì— í…ŒìŠ¤íŠ¸ì™€ íŠ¸ëžœìž­ì…˜ì˜ ë³µìž¡ë„ê°€ ì¦ê°€í•˜ê³ , ë§Žì€ ìžì›ì„ í•„ìš”ë¡œ í•©ë‹ˆë‹¤.
 ###  
-* µ¥ÀÌÅÍ °ü¸® - µ¥ÀÌÅÍ°¡ ¿©·¯ ¼­ºñ½º¿¡ °ÉÃÄ ºÐ»êµÇ±â ¶§¹®¿¡ ÇÑ¹ø¿¡ Á¶È¸ÇÏ±â ¾î·Æ°í, µ¥ÀÌÅÍÀÇ Á¤ÇÕ¼º ¶ÇÇÑ °ü¸®ÇÏ±â ¾î·Æ½À´Ï´Ù.
+* ë°ì´í„° ê´€ë¦¬ - ë°ì´í„°ê°€ ì—¬ëŸ¬ ì„œë¹„ìŠ¤ì— ê±¸ì³ ë¶„ì‚°ë˜ê¸° ë•Œë¬¸ì— í•œë²ˆì— ì¡°íšŒí•˜ê¸° ì–´ë µê³ , ë°ì´í„°ì˜ ì •í•©ì„± ë˜í•œ ê´€ë¦¬í•˜ê¸° ì–´ë µìŠµë‹ˆë‹¤.
   
   
