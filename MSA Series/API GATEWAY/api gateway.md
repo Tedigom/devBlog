@@ -29,4 +29,4 @@ MSA는 큰 서비스를 잘게 쪼개어 개발/운영 하는 아키텍처입니다. 하나의 큰 서비스는 
 API Gateway는 API 서버 앞단에서 모든 API 서버들의 엔드포인트를 단일화 해주는 또다른 서버입니다. API에 대한 인증과 인가 기능을 가지고 있으며, 메세지의 내용에 따라 어플리케이션 내부에 있는 마이크로 서비스로 라우팅하는 역할을 담당합니다.
 
 > _API Gateway의 시작은 SOA의 핵심 인프라라고 할 수 있는 ESB(Enterprise Service Bus)에서 시작되었습니다. 따라서 API Gateway의 많은 부분들이 ESB로 부터 승계되었습니다._
-_ESB가 SOAP/XML 기반의 무거운 기능을 가졌다면, API Gateway는 REST/JSON 기반으로 보다 가볍게 설계된 것이 특징입니다._
+_ESB가 SOAP/XML 기반의 무거운 기능을 가졌다면, API Gateway는 REST/JSON 기반으로 보다 가볍게 설계된 것이 특징입니다._  
