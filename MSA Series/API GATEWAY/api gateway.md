@@ -60,7 +60,7 @@ API Gateway는 클라이언트로 부터 접수된 메세지에 따라, API 호출을 적절한 서비스에
 
 
 
-### API Gateway 적용시 고려해야 할 사항
+### API Gateway 적용시 고려해야 할 사항  
 
 ####  
 1.  API Gateway 적용의 가장 큰 단점은 API Gateway를 내부 마이크로서비스와 결합한다는 것입니다. 이러한 결합은 기존 SOA에서의 ESB(Enterprise Service Bus)에서 발생했던 문제점이 다시 발생할 수 있습니다.
