@@ -1,75 +1,75 @@
-Áö³­ Æ÷½ºÆÃ¿¡¼­ MSA¸¦ ±¸¼ºÇÏ´Â ¾ÆÅ°ÅØÃ³ ¿ä¼Ò¿¡ ´ëÇØ »ìÆìº¸¾Ò½À´Ï´Ù. Inner Architecture¿Í Outer Architecture·Î ³ª´©¾î ¼³¸íÀ» µå·È¾úÁÒ.  
+ì§€ë‚œ í¬ìŠ¤íŒ…ì—ì„œ MSAë¥¼ êµ¬ì„±í•˜ëŠ” ì•„í‚¤í…ì²˜ ìš”ì†Œì— ëŒ€í•´ ì‚´íŽ´ë³´ì•˜ìŠµë‹ˆë‹¤. Inner Architectureì™€ Outer Architectureë¡œ ë‚˜ëˆ„ì–´ ì„¤ëª…ì„ ë“œë ¸ì—ˆì£ .  
 
-[MSA Á¦´ë·Î ÀÌÇØÇÏ±â - (2)¾ÆÅ°ÅØÃ³ °³¿ä](https://velog.io/@tedigom/MSA-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-2-MSA-Outer-Architecure)
+[MSA ì œëŒ€ë¡œ ì´í•´í•˜ê¸° - (2)ì•„í‚¤í…ì²˜ ê°œìš”](https://velog.io/@tedigom/MSA-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-2-MSA-Outer-Architecure)
 
-¿À´ÃÀº ±× Áß Outer Architecture¿¡¼­µµ API Gateway¿¡ ´ëÇØ ¼³¸íÇÏ·Á ÇÕ´Ï´Ù.
+ì˜¤ëŠ˜ì€ ê·¸ ì¤‘ Outer Architectureì—ì„œë„ API Gatewayì— ëŒ€í•´ ì„¤ëª…í•˜ë ¤ í•©ë‹ˆë‹¤.  
 
-## API GatewayÀÇ ÇÊ¿ä¼º
+## API Gatewayì˜ í•„ìš”ì„±
 
 
 
 ![concept1.PNG](https://images.velog.io/post-images/tedigom/5ae7a9e0-ff02-11e9-929b-8bdd0f9b8460/concept1.PNG)
 
-MSA´Â Å« ¼­ºñ½º¸¦ Àß°Ô ÂÉ°³¾î °³¹ß/¿î¿µ ÇÏ´Â ¾ÆÅ°ÅØÃ³ÀÔ´Ï´Ù. ÇÏ³ªÀÇ Å« ¼­ºñ½º´Â ¼ö½Ê~¼ö¹é°³ÀÇ ÀÛÀº ¼­ºñ½º·Î ³ª´µ¾îÁö¸ç, ¸¸¾à ÀÌ¸¦ Å¬¶óÀÌ¾ðÆ®¿¡¼­ ¼­ºñ½º¸¦ Á÷Á¢ È£ÃâÇÏ´Â ÇüÅÂ¶ó¸é ´ÙÀ½°ú °°Àº ¹®Á¦Á¡ÀÌ »ý±æ ¼ö ÀÖ½À´Ï´Ù.
+MSAëŠ” í° ì„œë¹„ìŠ¤ë¥¼ ìž˜ê²Œ ìª¼ê°œì–´ ê°œë°œ/ìš´ì˜ í•˜ëŠ” ì•„í‚¤í…ì²˜ìž…ë‹ˆë‹¤. í•˜ë‚˜ì˜ í° ì„œë¹„ìŠ¤ëŠ” ìˆ˜ì‹­~ìˆ˜ë°±ê°œì˜ ìž‘ì€ ì„œë¹„ìŠ¤ë¡œ ë‚˜ë‰˜ì–´ì§€ë©°, ë§Œì•½ ì´ë¥¼ í´ë¼ì´ì–¸íŠ¸ì—ì„œ ì„œë¹„ìŠ¤ë¥¼ ì§ì ‘ í˜¸ì¶œí•˜ëŠ” í˜•íƒœë¼ë©´ ë‹¤ìŒê³¼ ê°™ì€ ë¬¸ì œì ì´ ìƒê¸¸ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-* °¢°¢ÀÇ ¼­ºñ½º¸¶´Ù ÀÎÁõ/ÀÎ°¡ µî °øÅëµÈ ·ÎÁ÷À» ±¸ÇöÇØ¾ßÇÏ´Â ¹ø°Å·Î¿òÀÌ ÀÖ½À´Ï´Ù.
-* ¼ö¸¹Àº API È£ÃâÀ» ±â·ÏÇÏ°í °ü¸®ÇÏ±â°¡ ¾î·Æ½À´Ï´Ù.
-* Å¬¶óÀÌ¾ðÆ®¿¡¼­ ¿©·¯ ¸¶ÀÌÅ©·Î ¼­ºñ½º¿¡ ´ëÇÑ ¹ø°Å·Î¿î È£ÃâÀ» ÇØ¾ßÇÕ´Ï´Ù.
-* ³»ºÎÀÇ ºñÁî´Ï½º ·ÎÁ÷ÀÌ µå·¯³ª°Ô µÇ¾î º¸¾È¿¡ Ãë¾àÇØÁý´Ï´Ù.
+* ê°ê°ì˜ ì„œë¹„ìŠ¤ë§ˆë‹¤ ì¸ì¦/ì¸ê°€ ë“± ê³µí†µëœ ë¡œì§ì„ êµ¬í˜„í•´ì•¼í•˜ëŠ” ë²ˆê±°ë¡œì›€ì´ ìžˆìŠµë‹ˆë‹¤.
+* ìˆ˜ë§Žì€ API í˜¸ì¶œì„ ê¸°ë¡í•˜ê³  ê´€ë¦¬í•˜ê¸°ê°€ ì–´ë µìŠµë‹ˆë‹¤.
+* í´ë¼ì´ì–¸íŠ¸ì—ì„œ ì—¬ëŸ¬ ë§ˆì´í¬ë¡œ ì„œë¹„ìŠ¤ì— ëŒ€í•œ ë²ˆê±°ë¡œìš´ í˜¸ì¶œì„ í•´ì•¼í•©ë‹ˆë‹¤.
+* ë‚´ë¶€ì˜ ë¹„ì¦ˆë‹ˆìŠ¤ ë¡œì§ì´ ë“œëŸ¬ë‚˜ê²Œ ë˜ì–´ ë³´ì•ˆì— ì·¨ì•½í•´ì§‘ë‹ˆë‹¤.
 
-Æ¯È÷ ÀÌ·¯ÇÑ ¹®Á¦Á¡µéÀº ¸¶ÀÌÅ©·Î ¼­ºñ½ºÀÇ °¹¼ö°¡ ¸¹¾ÆÁú ¼ö·Ï ±âÇÏ±Þ¼öÀûÀ¸·Î ´Ã¾î³ª°Ô µÉ °ÍÀÔ´Ï´Ù. 
+íŠ¹ížˆ ì´ëŸ¬í•œ ë¬¸ì œì ë“¤ì€ ë§ˆì´í¬ë¡œ ì„œë¹„ìŠ¤ì˜ ê°¯ìˆ˜ê°€ ë§Žì•„ì§ˆ ìˆ˜ë¡ ê¸°í•˜ê¸‰ìˆ˜ì ìœ¼ë¡œ ëŠ˜ì–´ë‚˜ê²Œ ë  ê²ƒìž…ë‹ˆë‹¤. 
 
 ###  
 
-¾î´À ±Ô¸ð ÀÌ»óÀÇ ¸¶ÀÌÅ©·Î ¼­ºñ½º ±â¹Ý ¾îÇÃ¸®ÄÉÀÌ¼Ç¿¡´Â API Gateway¸¦ µµÀÔÇÏ´Â °ÍÀÌ È¿À²ÀûÀÔ´Ï´Ù.
+ì–´ëŠ ê·œëª¨ ì´ìƒì˜ ë§ˆì´í¬ë¡œ ì„œë¹„ìŠ¤ ê¸°ë°˜ ì–´í”Œë¦¬ì¼€ì´ì…˜ì—ëŠ” API Gatewayë¥¼ ë„ìž…í•˜ëŠ” ê²ƒì´ íš¨ìœ¨ì ìž…ë‹ˆë‹¤.
 
 
 ![concept2.PNG](https://images.velog.io/post-images/tedigom/4e85f7b0-ffca-11e9-86a4-6bfda3e4890b/concept2.PNG)
 
-API Gateway´Â API ¼­¹ö ¾Õ´Ü¿¡¼­ ¸ðµç API ¼­¹öµéÀÇ ¿£µåÆ÷ÀÎÆ®¸¦ ´ÜÀÏÈ­ ÇØÁÖ´Â ¶Ç´Ù¸¥ ¼­¹öÀÔ´Ï´Ù. API¿¡ ´ëÇÑ ÀÎÁõ°ú ÀÎ°¡ ±â´ÉÀ» °¡Áö°í ÀÖÀ¸¸ç, ¸Þ¼¼ÁöÀÇ ³»¿ë¿¡ µû¶ó ¾îÇÃ¸®ÄÉÀÌ¼Ç ³»ºÎ¿¡ ÀÖ´Â ¸¶ÀÌÅ©·Î ¼­ºñ½º·Î ¶ó¿ìÆÃÇÏ´Â ¿ªÇÒÀ» ´ã´çÇÕ´Ï´Ù.
+API GatewayëŠ” API ì„œë²„ ì•žë‹¨ì—ì„œ ëª¨ë“  API ì„œë²„ë“¤ì˜ ì—”ë“œí¬ì¸íŠ¸ë¥¼ ë‹¨ì¼í™” í•´ì£¼ëŠ” ë˜ë‹¤ë¥¸ ì„œë²„ìž…ë‹ˆë‹¤. APIì— ëŒ€í•œ ì¸ì¦ê³¼ ì¸ê°€ ê¸°ëŠ¥ì„ ê°€ì§€ê³  ìžˆìœ¼ë©°, ë©”ì„¸ì§€ì˜ ë‚´ìš©ì— ë”°ë¼ ì–´í”Œë¦¬ì¼€ì´ì…˜ ë‚´ë¶€ì— ìžˆëŠ” ë§ˆì´í¬ë¡œ ì„œë¹„ìŠ¤ë¡œ ë¼ìš°íŒ…í•˜ëŠ” ì—­í• ì„ ë‹´ë‹¹í•©ë‹ˆë‹¤.
 
-> _API GatewayÀÇ ½ÃÀÛÀº SOAÀÇ ÇÙ½É ÀÎÇÁ¶ó¶ó°í ÇÒ ¼ö ÀÖ´Â ESB(Enterprise Service Bus)¿¡¼­ ½ÃÀÛµÇ¾ú½À´Ï´Ù. µû¶ó¼­ API GatewayÀÇ ¸¹Àº ºÎºÐµéÀÌ ESB·Î ºÎÅÍ ½Â°èµÇ¾ú½À´Ï´Ù._
-_ESB°¡ SOAP/XML ±â¹ÝÀÇ ¹«°Å¿î ±â´ÉÀ» °¡Á³´Ù¸é, API Gateway´Â REST/JSON ±â¹ÝÀ¸·Î º¸´Ù °¡º±°Ô ¼³°èµÈ °ÍÀÌ Æ¯Â¡ÀÔ´Ï´Ù._
+> _API Gatewayì˜ ì‹œìž‘ì€ SOAì˜ í•µì‹¬ ì¸í”„ë¼ë¼ê³  í•  ìˆ˜ ìžˆëŠ” ESB(Enterprise Service Bus)ì—ì„œ ì‹œìž‘ë˜ì—ˆìŠµë‹ˆë‹¤. ë”°ë¼ì„œ API Gatewayì˜ ë§Žì€ ë¶€ë¶„ë“¤ì´ ESBë¡œ ë¶€í„° ìŠ¹ê³„ë˜ì—ˆìŠµë‹ˆë‹¤._
+_ESBê°€ SOAP/XML ê¸°ë°˜ì˜ ë¬´ê±°ìš´ ê¸°ëŠ¥ì„ ê°€ì¡Œë‹¤ë©´, API GatewayëŠ” REST/JSON ê¸°ë°˜ìœ¼ë¡œ ë³´ë‹¤ ê°€ë³ê²Œ ì„¤ê³„ëœ ê²ƒì´ íŠ¹ì§•ìž…ë‹ˆë‹¤._
 
 
-## API GatewayÀÇ ÁÖ¿ä ±â´É
+## API Gatewayì˜ ì£¼ìš” ê¸°ëŠ¥
 
-#### 1. ÀÎÁõ ¹× ÀÎ°¡ ( Authentication and Authorization)
+#### 1. ì¸ì¦ ë° ì¸ê°€ ( Authentication and Authorization)
 
-¸¶ÀÌÅ©·Î ¼­ºñ½º ¾ÆÅ°ÅØÃ³¿¡¼­ °¢°¢ÀÇ ¼­ºñ½º¿¡ API È£Ãâ¿¡ ´ëÇÑ ÀÎÁõ ¹× ÀÎ°¡¸¦ ÇÏ´Â °ÍÀº, °°Àº ¼Ò½ºÄÚµå¸¦ ¼­ºñ½º ÀÎ½ºÅÏ½ºµé¸¶´Ù ½É¾îÁÖ¾î¾ßÇÑ´Ù´Â °ÍÀ» ÀÇ¹ÌÇÕ´Ï´Ù. ÀÌ·¯ÇÑ °æ¿ì, ¼Ò½ºÀÇ Áßº¹ÀÌ ½ÉÇÏ¿© À¯Áö °ü¸®°¡ ¾î·Á¿î °ÍÀº ¹°·Ð, ·Î±ë ¹× ¸ð´ÏÅÍ¸µÀ» °ü¸®ÇÏ´Â °Íµµ ¸Å¿ì ¾î·Á¿öÁý´Ï´Ù. 
-ÀÌ·¯ÇÑ ÀÌÀ¯·Î ÀÎÁõ¼­ °ü¸®³ª, ÀÎÁõ, SSL, ÇÁ·ÎÅäÄÝ º¯È¯°ú °°Àº ±â´ÉµéÀº API Gateway¿¡¼­ ¿ÀÇÁ·Îµå ÇÔÀ¸·Î, °¢°¢ÀÇ ¼­ºñ½ºÀÇ ºÎ´ãÀ» ÁÙÀÌ°í, ¼­ºñ½ºÀÇ °ü¸® ¹× ¾÷±×·¹ÀÌµå¸¦ º¸´Ù ½±°Ô ÇÒ ¼ö ÀÖ°Ô ÇÕ´Ï´Ù.
+ë§ˆì´í¬ë¡œ ì„œë¹„ìŠ¤ ì•„í‚¤í…ì²˜ì—ì„œ ê°ê°ì˜ ì„œë¹„ìŠ¤ì— API í˜¸ì¶œì— ëŒ€í•œ ì¸ì¦ ë° ì¸ê°€ë¥¼ í•˜ëŠ” ê²ƒì€, ê°™ì€ ì†ŒìŠ¤ì½”ë“œë¥¼ ì„œë¹„ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ë“¤ë§ˆë‹¤ ì‹¬ì–´ì£¼ì–´ì•¼í•œë‹¤ëŠ” ê²ƒì„ ì˜ë¯¸í•©ë‹ˆë‹¤. ì´ëŸ¬í•œ ê²½ìš°, ì†ŒìŠ¤ì˜ ì¤‘ë³µì´ ì‹¬í•˜ì—¬ ìœ ì§€ ê´€ë¦¬ê°€ ì–´ë ¤ìš´ ê²ƒì€ ë¬¼ë¡ , ë¡œê¹… ë° ëª¨ë‹ˆí„°ë§ì„ ê´€ë¦¬í•˜ëŠ” ê²ƒë„ ë§¤ìš° ì–´ë ¤ì›Œì§‘ë‹ˆë‹¤. 
+ì´ëŸ¬í•œ ì´ìœ ë¡œ ì¸ì¦ì„œ ê´€ë¦¬ë‚˜, ì¸ì¦, SSL, í”„ë¡œí† ì½œ ë³€í™˜ê³¼ ê°™ì€ ê¸°ëŠ¥ë“¤ì€ API Gatewayì—ì„œ ì˜¤í”„ë¡œë“œ í•¨ìœ¼ë¡œ, ê°ê°ì˜ ì„œë¹„ìŠ¤ì˜ ë¶€ë‹´ì„ ì¤„ì´ê³ , ì„œë¹„ìŠ¤ì˜ ê´€ë¦¬ ë° ì—…ê·¸ë ˆì´ë“œë¥¼ ë³´ë‹¤ ì‰½ê²Œ í•  ìˆ˜ ìžˆê²Œ í•©ë‹ˆë‹¤.
 
-> _*Authentication(ÀÎÁõ)°ú Authorization(ÀÎ°¡)ÀÇ Â÷ÀÌ*_
+> _*Authentication(ì¸ì¦)ê³¼ Authorization(ì¸ê°€)ì˜ ì°¨ì´*_
 >
->_AuthenticationÀº À¯Àú°¡ ´©±¸ÀÎÁö È®ÀÎÇÏ´Â ÀýÂ÷(A¶ó°í ÇÏ¸ç Á¢±ÙÇÏ´Â »ç¶÷ÀÌ ÁøÂ¥ AÀÎÁö È®ÀÎÇÏ´Â ÀýÂ÷)ÀÌ°í, AuthorizationÀº ¾î¶°ÇÑ À¯Àú°¡ Æ¯Á¤ ÀÚ¿ø¿¡ Á¢±ÙÇÏ·Á ÇÒ¶§, ±×¿¡´ëÇÑ Á¢±Ù ±ÇÇÑÀÌ ÀÖ´ÂÁö È®ÀÎÇÏ´Â ÀýÂ÷ÀÔ´Ï´Ù._ 
+>_Authenticationì€ ìœ ì €ê°€ ëˆ„êµ¬ì¸ì§€ í™•ì¸í•˜ëŠ” ì ˆì°¨(Aë¼ê³  í•˜ë©° ì ‘ê·¼í•˜ëŠ” ì‚¬ëžŒì´ ì§„ì§œ Aì¸ì§€ í™•ì¸í•˜ëŠ” ì ˆì°¨)ì´ê³ , Authorizationì€ ì–´ë– í•œ ìœ ì €ê°€ íŠ¹ì • ìžì›ì— ì ‘ê·¼í•˜ë ¤ í• ë•Œ, ê·¸ì—ëŒ€í•œ ì ‘ê·¼ ê¶Œí•œì´ ìžˆëŠ”ì§€ í™•ì¸í•˜ëŠ” ì ˆì°¨ìž…ë‹ˆë‹¤._ 
 
-#### 2. ¿äÃ» ÀýÂ÷ÀÇ ´Ü¼øÈ­
+#### 2. ìš”ì²­ ì ˆì°¨ì˜ ë‹¨ìˆœí™”
 
-¿©·¯ ¸¶ÀÌÅ©·Î¼­ºñ½º¸¦ ´ë»óÀ¸·ÎÇÏ´Â ±â´ÉÀ» ÀÌ¿ëÇÏ·Á ÇÒ ¶§, ¸¸¾à API Gateway°¡ ¾ø´Ù¸é Å¬¶óÀÌ¾ðÆ®¿¡¼­ ¿©·¯ ¼­ºñ½ºµé¿¡ ´ëÇØ ¿äÃ»À» ÁøÇàÇØ¾ß ÇßÀ» °Ì´Ï´Ù.
-ÇÏÁö¸¸, API Gateway´Â ¿©·¯ Å¬¶óÀÌ¾ðÆ®ÀÇ ¿äÃ»À» ´ÜÀÏ Å¬¶óÀÌ¾ðÆ®ÀÇ ¿äÃ»À¸·Î ´ëÃ¼ °¡´ÉÇÏµµ·Ï ÇÕ´Ï´Ù. µû¶ó¼­ Å¬¶óÀÌ¾ðÆ®¿Í ¹é¿£µå °£ÀÇ API Åë½Å·®À» ÁÙ¿©ÁÖ¾î ´ë±â½Ã°£À» ÁÙÀÌ°í È¿À²¼ºÀ» ³ô¿©ÁÙ ¼ö ÀÖ½À´Ï´Ù.
+ì—¬ëŸ¬ ë§ˆì´í¬ë¡œì„œë¹„ìŠ¤ë¥¼ ëŒ€ìƒìœ¼ë¡œí•˜ëŠ” ê¸°ëŠ¥ì„ ì´ìš©í•˜ë ¤ í•  ë•Œ, ë§Œì•½ API Gatewayê°€ ì—†ë‹¤ë©´ í´ë¼ì´ì–¸íŠ¸ì—ì„œ ì—¬ëŸ¬ ì„œë¹„ìŠ¤ë“¤ì— ëŒ€í•´ ìš”ì²­ì„ ì§„í–‰í•´ì•¼ í–ˆì„ ê²ë‹ˆë‹¤.
+í•˜ì§€ë§Œ, API GatewayëŠ” ì—¬ëŸ¬ í´ë¼ì´ì–¸íŠ¸ì˜ ìš”ì²­ì„ ë‹¨ì¼ í´ë¼ì´ì–¸íŠ¸ì˜ ìš”ì²­ìœ¼ë¡œ ëŒ€ì²´ ê°€ëŠ¥í•˜ë„ë¡ í•©ë‹ˆë‹¤. ë”°ë¼ì„œ í´ë¼ì´ì–¸íŠ¸ì™€ ë°±ì—”ë“œ ê°„ì˜ API í†µì‹ ëŸ‰ì„ ì¤„ì—¬ì£¼ì–´ ëŒ€ê¸°ì‹œê°„ì„ ì¤„ì´ê³  íš¨ìœ¨ì„±ì„ ë†’ì—¬ì¤„ ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-#### 3. ¶ó¿ìÆÃ ¹× ·Îµå¹ë·±½Ì
+#### 3. ë¼ìš°íŒ… ë° ë¡œë“œë°¸ëŸ°ì‹±
 
-API Gateway´Â Å¬¶óÀÌ¾ðÆ®·Î ºÎÅÍ Á¢¼öµÈ ¸Þ¼¼Áö¿¡ µû¶ó, API È£ÃâÀ» ÀûÀýÇÑ ¼­ºñ½º¿¡ ¶ó¿ìÆÃ ÇÒ ¼ö ÀÖ´Â ±â´ÉÀÌ ÀÖ½À´Ï´Ù. ¶ÇÇÑ, ¼­ºñ½º ÀÎ½ºÅÏ½ºµé¿¡ ´ëÇÑ ºÎÇÏºÐ»êÀ» ÇÒ ¼ö ÀÖ½À´Ï´Ù.
-
-
-#### 4. ¼­ºñ½º ¿ÀÄÉ½ºÆ®·¹ÀÌ¼Ç
-¿ÀÄÉ½ºÅ©·¹ÀÌ¼ÇÀº ¿©·¯°³ÀÇ ¸¶ÀÌÅ©·Î ¼­ºñ½º¸¦ ¹­¾î »õ·Î¿î ¼­ºñ½º¸¦ ¸¸µå´Â °³³äÀÔ´Ï´Ù. ¿ÀÄÉ½ºÆ®·¹ÀÌ¼Ç ·ÎÁ÷À» °úµµÇÏ°Ô ³Ö´Â °ÍÀº, API GatewayÀÇ ºÎ´ãÀ» ´Ã¸®´Â °ÍÀ¸·Î, ¼º´É ÀúÇÏ¸¦ ÀÏÀ¸Å³ ¼ö ÀÖ¾î, MSA¿Í API Gateway¿¡ ´ëÇÑ ³ôÀº ¼öÁØÀÇ ±â¼úÀû ÀÌÇØ¸¦ ¹ÙÅÁÀ¸·Î ÀÌ·ç¾îÁ®¾ß ÇÕ´Ï´Ù. 
+API GatewayëŠ” í´ë¼ì´ì–¸íŠ¸ë¡œ ë¶€í„° ì ‘ìˆ˜ëœ ë©”ì„¸ì§€ì— ë”°ë¼, API í˜¸ì¶œì„ ì ì ˆí•œ ì„œë¹„ìŠ¤ì— ë¼ìš°íŒ… í•  ìˆ˜ ìžˆëŠ” ê¸°ëŠ¥ì´ ìžˆìŠµë‹ˆë‹¤. ë˜í•œ, ì„œë¹„ìŠ¤ ì¸ìŠ¤í„´ìŠ¤ë“¤ì— ëŒ€í•œ ë¶€í•˜ë¶„ì‚°ì„ í•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
 
+#### 4. ì„œë¹„ìŠ¤ ì˜¤ì¼€ìŠ¤íŠ¸ë ˆì´ì…˜
+ì˜¤ì¼€ìŠ¤í¬ë ˆì´ì…˜ì€ ì—¬ëŸ¬ê°œì˜ ë§ˆì´í¬ë¡œ ì„œë¹„ìŠ¤ë¥¼ ë¬¶ì–´ ìƒˆë¡œìš´ ì„œë¹„ìŠ¤ë¥¼ ë§Œë“œëŠ” ê°œë…ìž…ë‹ˆë‹¤. ì˜¤ì¼€ìŠ¤íŠ¸ë ˆì´ì…˜ ë¡œì§ì„ ê³¼ë„í•˜ê²Œ ë„£ëŠ” ê²ƒì€, API Gatewayì˜ ë¶€ë‹´ì„ ëŠ˜ë¦¬ëŠ” ê²ƒìœ¼ë¡œ, ì„±ëŠ¥ ì €í•˜ë¥¼ ì¼ìœ¼í‚¬ ìˆ˜ ìžˆì–´, MSAì™€ API Gatewayì— ëŒ€í•œ ë†’ì€ ìˆ˜ì¤€ì˜ ê¸°ìˆ ì  ì´í•´ë¥¼ ë°”íƒ•ìœ¼ë¡œ ì´ë£¨ì–´ì ¸ì•¼ í•©ë‹ˆë‹¤. 
 
 
 
-### API Gateway Àû¿ë½Ã °í·ÁÇØ¾ß ÇÒ »çÇ×  
+
+
+### API Gateway ì ìš©ì‹œ ê³ ë ¤í•´ì•¼ í•  ì‚¬í•­  
 
 ####  
-1.  API Gateway Àû¿ëÀÇ °¡Àå Å« ´ÜÁ¡Àº API Gateway¸¦ ³»ºÎ ¸¶ÀÌÅ©·Î¼­ºñ½º¿Í °áÇÕÇÑ´Ù´Â °ÍÀÔ´Ï´Ù. ÀÌ·¯ÇÑ °áÇÕÀº ±âÁ¸ SOA¿¡¼­ÀÇ ESB(Enterprise Service Bus)¿¡¼­ ¹ß»ýÇß´ø ¹®Á¦Á¡ÀÌ ´Ù½Ã ¹ß»ýÇÒ ¼ö ÀÖ½À´Ï´Ù.
+1.  API Gateway ì ìš©ì˜ ê°€ìž¥ í° ë‹¨ì ì€ API Gatewayë¥¼ ë‚´ë¶€ ë§ˆì´í¬ë¡œì„œë¹„ìŠ¤ì™€ ê²°í•©í•œë‹¤ëŠ” ê²ƒìž…ë‹ˆë‹¤. ì´ëŸ¬í•œ ê²°í•©ì€ ê¸°ì¡´ SOAì—ì„œì˜ ESB(Enterprise Service Bus)ì—ì„œ ë°œìƒí–ˆë˜ ë¬¸ì œì ì´ ë‹¤ì‹œ ë°œìƒí•  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
 
-> _2000³â´ë ÈÄ¹Ý, ¸¹Àº SOA ÇÁ·ÎÁ§Æ®°¡ ½ÇÆÐÇÑ ÀÌÀ¯·Î SOAÀÇ ÇÙ½ÉÀûÀÎ ¿ä¼Ò Áß ÇÏ³ªÀÎ ESB°¡ ²ÅÈ÷´Â °æ¿ì¸¦ ¸¹ÀÌ º¼ ¼ö ÀÖ¾ú½À´Ï´Ù. ±× ÀÌÀ¯´Â ´ÙÀ½°ú °°½À´Ï´Ù.
-Ã¹ ¹øÂ°·Î, ´ç½Ã ESB ³»ºÎ Ã³¸® ·ÎÁ÷À» XMLÀ» ±â¹ÝÀ¸·Î ÇÏ¿´´Âµ¥, XMLÀÇ ÆÄ½ÌÀº ¿À¹öÇìµå°¡ Å« ÀÛ¾÷ÀÌ¾ú½À´Ï´Ù.
-µÎ ¹øÂ°·Î, ESB´Â °¡º­¿î ¿¬»ê »Ó¸¸ ¾Æ´Ï¶ó, °úµµÇÑ Orchestration µî ¹«°Å¿î ·ÎÁ÷À» °¡Áö°í ÀÖ¾ú½À´Ï´Ù. Æ¯È÷ ESB¸¦ Gateway·ÎÀÇ Æ¯¼ºÀÌ ¾Æ´Ñ ½Ã½ºÅÛÀ» ÅëÇÕÇÏ±â À§ÇÑ ¿ªÇÒ·Î ¸¹ÀÌ ±¸ÇöÇÏ¿´±â ¶§¹®¿¡ ¸¹Àº ½ÇÆÐ »ç·Ê°¡ ¹ß»ýÇÏ¿´½À´Ï´Ù._
+> _2000ë…„ëŒ€ í›„ë°˜, ë§Žì€ SOA í”„ë¡œì íŠ¸ê°€ ì‹¤íŒ¨í•œ ì´ìœ ë¡œ SOAì˜ í•µì‹¬ì ì¸ ìš”ì†Œ ì¤‘ í•˜ë‚˜ì¸ ESBê°€ ê¼½ížˆëŠ” ê²½ìš°ë¥¼ ë§Žì´ ë³¼ ìˆ˜ ìžˆì—ˆìŠµë‹ˆë‹¤. ê·¸ ì´ìœ ëŠ” ë‹¤ìŒê³¼ ê°™ìŠµë‹ˆë‹¤.
+ì²« ë²ˆì§¸ë¡œ, ë‹¹ì‹œ ESB ë‚´ë¶€ ì²˜ë¦¬ ë¡œì§ì„ XMLì„ ê¸°ë°˜ìœ¼ë¡œ í•˜ì˜€ëŠ”ë°, XMLì˜ íŒŒì‹±ì€ ì˜¤ë²„í—¤ë“œê°€ í° ìž‘ì—…ì´ì—ˆìŠµë‹ˆë‹¤.
+ë‘ ë²ˆì§¸ë¡œ, ESBëŠ” ê°€ë²¼ìš´ ì—°ì‚° ë¿ë§Œ ì•„ë‹ˆë¼, ê³¼ë„í•œ Orchestration ë“± ë¬´ê±°ìš´ ë¡œì§ì„ ê°€ì§€ê³  ìžˆì—ˆìŠµë‹ˆë‹¤. íŠ¹ížˆ ESBë¥¼ Gatewayë¡œì˜ íŠ¹ì„±ì´ ì•„ë‹Œ ì‹œìŠ¤í…œì„ í†µí•©í•˜ê¸° ìœ„í•œ ì—­í• ë¡œ ë§Žì´ êµ¬í˜„í•˜ì˜€ê¸° ë•Œë¬¸ì— ë§Žì€ ì‹¤íŒ¨ ì‚¬ë¡€ê°€ ë°œìƒí•˜ì˜€ìŠµë‹ˆë‹¤._
 
-2. API GatewayÀÇ Scale-out Àû¿ëÀÌ À¯¿¬ÇÏ°Ô ÀÏ¾î³ªÁö ¾ÊÀ» °æ¿ì, API Gateway°¡ º´¸ñÁöÁ¡ÀÌ µÇ¾î ¾îÇÃ¸®ÄÉÀÌ¼ÇÀÇ ¼º´ÉÀúÇÏ°¡ ÀÏ¾î³¯ ¼ö ÀÖ½À´Ï´Ù.
+2. API Gatewayì˜ Scale-out ì ìš©ì´ ìœ ì—°í•˜ê²Œ ì¼ì–´ë‚˜ì§€ ì•Šì„ ê²½ìš°, API Gatewayê°€ ë³‘ëª©ì§€ì ì´ ë˜ì–´ ì–´í”Œë¦¬ì¼€ì´ì…˜ì˜ ì„±ëŠ¥ì €í•˜ê°€ ì¼ì–´ë‚  ìˆ˜ ìžˆìŠµë‹ˆë‹¤.
 
-3. API Gateway¶ó´Â Ãß°¡ÀûÀÎ °èÃþÀÌ ¸¸µé¾îÁö´Â °ÍÀÌ±â ¶§¹®¿¡, ±×¸¸Å­ ³×Æ®¿öÅ© latency°¡ Áõ°¡ÇÏ°Ô µË´Ï´Ù. 
+3. API Gatewayë¼ëŠ” ì¶”ê°€ì ì¸ ê³„ì¸µì´ ë§Œë“¤ì–´ì§€ëŠ” ê²ƒì´ê¸° ë•Œë¬¸ì—, ê·¸ë§Œí¼ ë„¤íŠ¸ì›Œí¬ latencyê°€ ì¦ê°€í•˜ê²Œ ë©ë‹ˆë‹¤. 
