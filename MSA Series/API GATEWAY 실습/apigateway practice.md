@@ -1,4 +1,4 @@
-지난 포스팅에서 MSA를 구성하는 아키텍처 요소에 대해 살펴보았습니다. Inner Architecture와 Outer Architecture로 나누어 설명을 드렸었죠.  
+지난 포스팅에서 MSA를 구성하는 아키텍처 요소에 대해 살펴보았습니다. Inner Architecture와 Outer Architecture로 나누어 설명을 드렸었죠.   
 
 [MSA 제대로 이해하기 - (2)아키텍처 개요](https://velog.io/@tedigom/MSA-%EC%A0%9C%EB%8C%80%EB%A1%9C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-2-MSA-Outer-Architecure)
 
