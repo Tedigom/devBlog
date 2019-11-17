@@ -16,14 +16,20 @@ Service Mesh는 통신 및 네트워크 기능을 비즈니스 로직과 분리�
 
 그럼 API Gateway와 Service Mesh는 무엇이 다른걸까요? 
 
-* 적용되는 위치
+* 적용되는 위치   
 API Gateway는 마이크로서비스 그룹의 외부 경계에 위치하여 역할을 수행하지만, ServiceMesh는 경계 내부에서 그 역할을 수행합니다.
 
-* 아키텍쳐 형태
+* 아키텍쳐 형태   
 API Gateway가 중앙집중형 아키텍쳐여서 SPOF(Single Point of Failure)을 생성한다면, Service Mesh는 분산형 아키텍쳐를 취하기 때문에 SPOF를 생성하지 않고 확장이 용이합니다.
 
+* 패턴   
+API Gateway는 일반적으로 Gateway proxy pattern을 사용해서 수행됩니다. Consumer(호출자)은 구현 내용을 알 필요 없이 Gateway를 호출하는 방법만 알면 Gateway가 알아서 수행해주는 방식입니다.  
+반면, Service Mesh는 일반적으로 Sidecar proxy pattern을 사용합니다. Consumer(호출자)의 코드에는 Provider(공급자)의 주소를 찾는방법, failover와 관련된 코드 등의 내용이 들어가게 됩니다. 다만, 호출자의 코드는 어플리케이션 코드(비즈니스 로직)에 내장되는 것이 아니라 sidecar 형태로 별개로 관리됩니다. 
+
 #  
-이외에 기능적인 측면에서의 차이점은 아래의 표에서와 같습니다.
+이외의 차이점에 대해서는 아래의 표에 정리해 보았습니다.
+
+
 ##  
 
 최근 MSA에서 API Gateway는 노출되는 부분(External)에 위치하여 내부서비스를 보호 및 제어하는 역할을 하고, Service Mesh는 내부 서비스(Internal)에 위치하여 서비스를 관리하는 구조로 많이 사용되고 있습니다.
