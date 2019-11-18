@@ -1,4 +1,4 @@
-이번에는 Outer Architecture 중 Service Mesh에 대한 이야기입니다.
+이번에는 Outer Architecture 중 Service Mesh에 대한 이야기입니다. 
 
 # Service Mesh
 Service Mesh는 쉽게말해 마이크로 서비스 간의 통신(네트워크)을 담당하는 요소입니다.
