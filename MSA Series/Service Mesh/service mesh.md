@@ -1,4 +1,4 @@
-이번에는 Outer Architecture 중 Service Mesh에 대한 이야기입니다. 
+이번에는 Outer Architecture 중 Service Mesh에 대한 이야기입니다.
 
 # Service Mesh
 Service Mesh는 쉽게말해 마이크로 서비스 간의 통신(네트워크)을 담당하는 요소입니다.
@@ -67,7 +67,6 @@ Istio/Envoy, Consul, Linkerd 등이 이 유형에 해당되며, sidecar proxy �
 ### Sidecar pattern?
 
 ![sidecar.png](https://images.velog.io/post-images/tedigom/ac3a3bd0-092c-11ea-8263-c5a6e835ad0d/sidecar.png)
-  
 Sidecar pattern은 (컨테이너 배포방식의 경우) 모든 응용 프로그램 컨테이너에 추가로 sidecar 컨테이너가 배포됩니다. Sidecar는 서비스에 들어오거나 나가는 모든 네트워크 트래픽을 처리하게 됩니다. 가장 큰 특징은, 비즈니스 로직이 포함된 실제 서비스와 sidecar이 병렬로 구성되어있기 때문에, 서비스 호출에서 서비스가 직접 서비스를 호출하는 것이 아니라 proxy 를 통해서 호출하게됩니다. 
 
 따라서, 대규모의 마이크로서비스 환경이라고 하여도 개발자가 별도의 작업 없이 서비스의 연결 뿐만 아니라, 로깅, 모니터링, 보안, 트래픽 제어와 같은 다양한 이점을 누릴 수 있습니다.
@@ -86,8 +85,3 @@ Sidecar pattern은 (컨테이너 배포방식의 경우) 모든 응용 프로그
 * 보안
 * Health check, Retry and Timeout
 * Metric 수집
-
-
-## Service Mesh 적용 시 고려해야 할 사항
-
-
