@@ -27,7 +27,7 @@ API Gateway가 중앙집중형 아키텍쳐여서 SPOF(Single Point of Failure)�
 
 * 패턴
 API Gateway는 일반적으로 Gateway proxy pattern을 사용해서 수행됩니다. Consumer(호출자)은 구현 내용을 알 필요 없이 Gateway를 호출하는 방법만 알면 Gateway가 알아서 수행해주는 방식입니다.  
-반면, Service Mesh는 일반적으로 Sidecar proxy pattern을 사용합니다. Consumer(호출자)의 코드에는 Provider(공급자)의 주소를 찾는방법, failover와 관련된 코드 등의 내용이 들어가게 됩니다. 다만, 호출자의 코드는 어플리케이션 코드(비즈니스 로직)에 내장되는 것이 아니라 sidecar 형태로 별개로 관리됩니다. 
+반면, Service Mesh는 일반적으로 Sidecar proxy pattern을 사용합니다. Consumer(호출자)의 코드에는 Provider(공급자)의 주소를 찾는방법, failover와 관련된 코드 등의 내용이 들어가게 됩니다. 다만, 호출자의 코드는 어플리케이션 코드(비즈니스 로직)에 내장되는 것이 아니라 sidecar 형태로 별개로 관리됩니다.  
 
 #  
 이외의 차이점에 대해서는 아래의 표에 정리해 보았습니다.
