@@ -84,4 +84,4 @@ Sidecar pattern은 (컨테이너 배포방식의 경우) 모든 응용 프로그
 * 암호화 (TLS)
 * 보안
 * Health check, Retry and Timeout
-* Metric 수집
+* Metric 수집 
