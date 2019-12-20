@@ -5,7 +5,7 @@ MSA에서는 상당수의 마이크로서비스가 분산환경에서 운영되�
 
 Telemetry는 Grafana, Prometheus, EFK와 같이 오픈소스로 직접구현하는 방법, Datadog와 같은 상용 솔루션을 이용하는 방법, 그리고 AWS Cloud watch, GCP Stackdriver와 같이 public cloud의 SaaS를 이용하는 방법으로 구현할 수 있습니다.
 
-Telemetry .png
+![Telemetry](https://github.com/Tedigom/devBlog/blob/master/MSA%20Series/Telemetry/Telemetry%20.png)
 
 Telemetry의 주요기능
 1. Monitoring
@@ -21,7 +21,8 @@ Log는 실행중인 프로세스에서 발생하는 이벤트를 말하며, Logg
 
 AWS에서는 Amazon Elastic Search 등이 Logging을 담당하는 요소이며, OSS로는 EFK(Elastic Search - FluentD - Kibana) 가 대표적입니다. 각 서비스에 심어진 Agent가 해당 서비스의 Log정보들을 수집하고, Log Server(Aggregator)를 통해 취합됩니다. 최종적으로 Kibana와 같은 툴을 통해 시각화된 데이터를 관리자에게 보여줍니다.
 
-efk.pngimage 출처: https://medium.com/@carlosedp/log-aggregation-with-elasticsearch-fluentd-and-kibana-stack-on-arm64-kubernetes-cluster-516fb64025f9
+![efk.pngimage](https://github.com/Tedigom/devBlog/blob/master/MSA%20Series/Telemetry/efk.png)
+출처: https://medium.com/@carlosedp/log-aggregation-with-elasticsearch-fluentd-and-kibana-stack-on-arm64-kubernetes-cluster-516fb64025f9
 
 Logging시의 고려사항
 로그를 서비스 내 저장소에 저장할 경우, 관리가 어려워지므로 ( container managed service의 경우 컨테이너가 종료되거나 재시작 될 경우 사라질 수 있습니다.) 로그를 어플리케이션 서버 내부에 저장하지 않고 외부 저장소에 저장하도록 합니다.
