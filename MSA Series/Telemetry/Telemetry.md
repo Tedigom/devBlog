@@ -33,3 +33,6 @@ MSA 에서 가상머신과 컨테이너는 application과의 결합이 "약한 �
 Tracing은 마이크로 서비스 아키텍처에서 발생한 Event를 발생한 순서대로 나열하여 추적할 수 있게 해주는 기능입니다.  
 
 AWS에서의 Amazon X-Ray 등이 Tracing을 담당하는 요소이며, OSS로는 Zipkin Jaeger등이 대표적입니다.  
+
+
++ Stackdriver / Spinnaker / Zipkin
