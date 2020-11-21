@@ -63,4 +63,6 @@ IO와 관련한 이슈는 다른 것 보다도 모니터링 툴을 통해 조금
 > Public Cloud에서 Kubernetes Production 환경을 사용하는 경우에는 IOPS에 대한 확인 및 고려가 굉장히 중요합니다.   
 > Azure의 경우에는 VM에 해당하는 부분과 OS Disk에 해당하는 부분의 IOPS가 각각 존재하며, 선택한 VM의 IOPS와 OS Disk의 IOPS 중 더 작은 값이 Max IOPS입니다. 따라서 VM의 IOPS 뿐만 아니라 OS Disk의 IOPS에 대한 고려도 굉장히 중요합니다.  
 
-> ex ) VM의 IOPS가 12800 / OS 디스크의 IOPS가 120인 경우, MAX_IOPS의 값은 120이 됨.  
+> ex ) VM의 IOPS가 12800 / OS 디스크의 IOPS가 120인 경우, MAX_IOPS의 값은 120이 됨. 
+
+
