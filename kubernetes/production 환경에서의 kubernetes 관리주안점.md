@@ -48,7 +48,18 @@ request와 limit값을 pod 내 어플리케이션 resource 요구량에 맞게 �
 
 
 ## 2. IO 과부하 이슈 ( IO overload )
-IO 과부하 이슈(Disk 이슈)는 Memory 과부하 이슈보다 조금 더 복잡한 증상이 나타납니다.
+IO 과부하 이슈(Disk 이슈)는 Memory 과부하 이슈보다는 조금 더 발견하기 어려우며, 복합적인 증상이 나타납니다. 
+IO와 관련한 이슈는 다른 것 보다도 모니터링 툴을 통해 조금 더 쉽게 확인 가능하며, 모니터링 툴을 활용하는 방법이 가장 이상적입니다.
 
 ### IO 과부하 이슈로 인한 증상
-1. 클러스터 
+1. 클러스터 내 노드가 NotReady 상태가 됨
+2. API 서버에 접근할 때 "TLS handshake timeout" 메세지가 나타남
+3. 중요한 데몬셋이나 pod(kube-proxy, coreDNS 등) 이 fail 상태가 됨
+4. istio 사용이나, 복잡한 오퍼레이터 설정시에 성능/안정성 이슈가 생김
+5. 타 클라우드 서비스/On-premises 연결시에 latency가 길어지거나 networking 에러가 발생
+6. 느린 DNS쿼리
+7. Persistent Volume을 연결/연결해제 시킬 때 느리거나, 이슈가 생김  
+
+> Public Cloud에서 Kubernetes Production 환경을 사용하는 경우에는 IOPS에 대한 확인 및 고려가 굉장히 중요합니다. 
+> Azure의 경우에는 VM에 해당하는 부분과 OS Disk에 해당하는 부분의 IOPS가 각각 존재하며, 선택한 VM의 IOPS와 OS Disk의 IOPS 중 더 작은 값> 이 Max IOPS입니다. 따라서 VM의 IOPS 뿐만 아니라 OS Disk의 IOPS에 대한 고려도 굉장히 중요합니다.
+> ex ) VM의 IOPS가 12800 / OS 디스크의 IOPS가 120인 경우, MAX_IOPS의 값은 120이 됨.
