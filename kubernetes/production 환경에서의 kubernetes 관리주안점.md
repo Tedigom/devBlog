@@ -32,4 +32,19 @@ Overcommited 상태가 계속될 경우, CPU의 경우에는 request 수준까�
 
 
 #### 2. 사용자의 pod가 Out of Memory로 인해 제거되는 경우 (OOMKilled)
-pod의 limit이 설정되어 있지만, limit값이 너무 작을 때 Out of Memory Killed(OOMKilled) 가 발생합니다.
+pod의 limit이 설정되어 있지만, limit값이 너무 작을 때 Out of Memory Killed(OOMKilled) 가 발생합니다.  
+request와 limit값을 pod 내 어플리케이션 resource 요구량에 맞게 설정하는 것이 이러한 증상을 줄일 수 있는 방법입니다.
+
+
+#### 3. Kube-system의 파드가 강제종료(evicted) 되는 경우
+이 경우는 쿠버네티스 클러스터 자체가 불안정적이거나, 사용할 수 없는 상태가 되어버립니다.
+
+
+### 메모리 과부하 이슈가 생길때 취할 수 있는 방법 ( Best Practices )
+1. 모든 Pod에 request와 resource를 설정합니다.
+2. namespace 마다의 Resource Quota와 Limit Range를 설정하여 클러스터의 자원을 관리합니다.
+3. Critical한 Pod의 경우에는 dedicated node pool로 분리 시키거나, 해당 Pod가 Critical하다는 것을 라벨링하여 표시합니다.  
+
+
+
+## 2. IO 과부하 이슈 ( IO overload )
