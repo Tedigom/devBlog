@@ -48,3 +48,7 @@ request와 limit값을 pod 내 어플리케이션 resource 요구량에 맞게 �
 
 
 ## 2. IO 과부하 이슈 ( IO overload )
+IO 과부하 이슈(Disk 이슈)는 Memory 과부하 이슈보다 조금 더 복잡한 증상이 나타납니다.
+
+### IO 과부하 이슈로 인한 증상
+1. 클러스터 
