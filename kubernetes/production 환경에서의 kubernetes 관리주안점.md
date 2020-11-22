@@ -63,7 +63,7 @@ IO와 관련한 이슈는 다른 것 보다도 모니터링 툴을 통해 조금
 ### IO를 증가시키는 원인
 * Pod의 수가 너무 많거나, 컨테이너의 이미지가 너무 큰 경우 
 * 써드파티 로깅 시스템이나,모니터링, audit tools을 적극적으로 사용하는 경우
-* OS디스크를 데이터디스크 처럼 사용하는 경우 ( 기본적인 것이지만.. 이렇게 사용하면 안됩니다. 데이터 디스크는 PV를 붙여서 사용해야합니다.)
+* OS디스크를 데이터디스크 처럼 사용하는 경우 
 
 > Public Cloud에서 Kubernetes Production 환경을 사용하는 경우에는 IOPS에 대한 확인 및 고려가 굉장히 중요합니다.   
 > Azure의 경우에는 VM에 해당하는 부분과 OS Disk에 해당하는 부분의 IOPS가 각각 존재하며, 선택한 VM의 IOPS와 OS Disk의 IOPS 중 더 작은 값이 Max IOPS입니다. 따라서 VM의 IOPS 뿐만 아니라 OS Disk의 IOPS에 대한 고려도 굉장히 중요합니다.  
@@ -72,6 +72,38 @@ IO와 관련한 이슈는 다른 것 보다도 모니터링 툴을 통해 조금
 
 
 ### IO 과부하 이슈가 생길때 취할 수 있는 방법 ( Best Practices )
+1.OS 디스크를 데이터디스크처럼 사용하면 안됩니다. 데이터 디스크는 PV를 붙여서 사용해야합니다.
+2.OS 디스크의 사이즈를 충분히 늘려 어플리케이션이 구동할 수 있을 만큼의 max IOPS를 확보해야합니다.
+3. ephemeral OS 디스크를 사용함으로써 성능을 높일 수 있습니다.
+4. knode를 이용하여 성능을 높일 수 있습니다.( 도커에 대한 mountPath를 data-drive나 ephemeral disk로 변경)
+5. 써드파티 로깅시스템이나 모니터링에 대하여 I/O를 많이 사용하는지에 대하여 체크를 해야합니다.
+6. OS Disk에 alert를 세팅해주어 이슈가 있을 때 운영자에 알람이 갈 수 있도록 합니다.
+
+
+
+## 3. SNAT 포트 부족 이슈 (SNAT port exaustion )
+SNAT 포트 부족 이슈는 Public cloud를 사용하는 경우 좀 더 발생하기 쉬운 이슈로, 어플리케이션 구동에 직접적인 영향을 끼치지만 바로 원인을 
+발견하기 어렵기 때문에 클라우드사 모니터링 툴을 활용하여 SNAT의 여유가 충분한지 체크를 계속 해주어야 합니다.
+
+### SNAT 포트 부족 이슈로 인한 증상
+1. 간헐적으로 DNS resoulution이 실패됨
+2. 노드가 NotReady 상태가 되어 API 서버에 연결을 할 수 없게됨.
+3. Pod에서 API server나 다른 네트워크 주소로 연결 시 "i/o timeout"과 같은 에러코드가 발생함
+
+
+### SNAT 포트부족 이슈가 생길때 취할 수 있는 방법 ( Best Practices, Azure의 경우 )
+1. frontend IP를 늘려줌으로써 아웃바운드에 대한 커넥션 숫자를 늘려줍니다.
+2. VM 마다의 아웃바운드 포트 갯수를 조절합니다.
+3. SNAT을 얼마나 사용하는지, 얼마나 Fail이 되는지를 모니터링을 항상 해주어야 합니다. 
+
+
+
+## 4. Master(Control plane) 과부하 이슈 (Control plane overload )
+일반적으로 Public cloud에서 Kubernetes를 운영할 때에는 managed 서비스(EKS, AKS, GKE 등)을 사용하는 경우가 많은데, 이런 경우에도 Control plane에 간헐적으로 문제가 발생할 수 있습니다.  
+
+Master(Control plane)에 과부하가 생길 경우의 증상으로는 보통 API 서버와 연결 시 "TLS handshake timeout" 현상이 발생하게 됩니다.(API 서버에 문제가 발생하게 됨)  
+
+API서버에 너무 높은 QPS hitting이 발생하거나, ETCD에 너무 많은 객체가 들어가서 API 서버에서 응답을 할때의 payload가 너무 커지는 경우, 혹은 컨테이너가 너무 많거나, request나 update가 많을 때에는 Control plane의 API 서버가 OOMkilled가 될 수 있습니다.  
 
 
 
