@@ -126,3 +126,13 @@ Quota문제의 경우에는 에러메세지에 Quota가 부족하다고 나오�
 
 
 ## 6. 네트워크 설정 오류  이슈 ( Network misconfiguration )
+### 네트워크 설정 오류로 인한 증상
+1. 노드가 NotReady 상태가 됨
+2. API 서버에 연결 할 때 "TLS handshake timeout"에러가 발생함
+3. Pod를 만들 때 Image pull fail 에러가 발생함
+4. scaling이나 업그레이드를 할 때 실패함
+5. pod 간 통신이나 다른 노드와의 통신이 실패함
+
+네트워크 오류가 발생할 경우에는, 네트워크의 문제/변경이 있었는지를 가장 먼저 확인해 주어야하며,  
+NSG(Network Security Groups)룰이나 Policy가 잘못 설정했거나 변경이 생긴 경우를 확인해 주어야 합니다.  
+또한, Custom DNS 서버나 vnet의 firewall을 사용할 경우 잘못 설정되어 있는 부분에 대해 확인하고, pod를 생성하거나 operation을 할때 실패현상을 야기시키는 부분이 없는지 체크해 주어야합니다.  
