@@ -91,7 +91,7 @@ SNAT 포트 부족 이슈는 Public cloud를 사용하는 경우 좀 더 발생�
 3. Pod에서 API server나 다른 네트워크 주소로 연결 시 "i/o timeout"과 같은 에러코드가 발생함
 
 
-### SNAT 포트부족 이슈가 생길때 취할 수 있는 방법 ( Best Practices, Azure의 경우 )
+### SNAT 포트부족 이슈가 생길 때 취할 수 있는 방법 ( Best Practices, Azure의 경우 )
 1. frontend IP를 늘려줌으로써 아웃바운드에 대한 커넥션 숫자를 늘려줍니다.
 2. VM 마다의 아웃바운드 포트 갯수를 조절합니다.
 3. SNAT을 얼마나 사용하는지, 얼마나 Fail이 되는지를 모니터링을 항상 해주어야 합니다. 
@@ -106,4 +106,23 @@ Master(Control plane)에 과부하가 생길 경우의 증상으로는 보통 AP
 API서버에 너무 높은 QPS hitting이 발생하거나, ETCD에 너무 많은 객체가 들어가서 API 서버에서 응답을 할때의 payload가 너무 커지는 경우, 혹은 컨테이너가 너무 많거나, request나 update가 많을 때에는 Control plane의 API 서버가 OOMkilled가 될 수 있습니다.  
 
 
+### Master(Control plane) 과무하 이슈가 생길 때 취할 수 있는 방법 ( Best Practices)
+1. 클러스터의 API 서버에는 DDOSing을 하지 않습니다.
+2. 새로운 컴포넌트를 올릴 경우에는 미리 load test를 해야합니다.
+3. API 서버의 limit QPS 와 throughput을 항상 모니터 해줍니다.
+4. cronjob의 경우 끝난 job들에 대하여 자동으로 cleanup할 수 있도록 해주어야 합니다.
 
+
+## 5.리소스 할당량 부족 이슈 ( Insufficient quota )
+Quota에 대한 계획은 kubernetes를 운영환경에서 활용할 때 굉장히 중요합니다. 또한, 요구사항이나 문제 상황에 따라 quota를 바로바로 늘릴 수 있는 환경을 구성해 놓는 것도 역시 중요합니다. 여기서의 리소스란, CPU/Memory 뿐만 아니라 VNET에 해당하는 서브넷 등도 포함합니다.
+
+Quota 부족이 생길 경우의 증상으로는 auto-scaling이나 수동으로 scaling을 할 때 해당 동작이 실패 할 수 있고, pod/node의 업그레이드가 실패 할 수 있습니다. ( rolling upgrade(default)를 하는 경우에는 여유분의 자원이 필요합니다.)  
+
+Quota문제의 경우에는 에러메세지에 Quota가 부족하다고 나오기 때문에 좀 더 빠르게 문제를 해결할 수 있습니다.  
+
+### 리소스 할당량 부족 이슈가 생길 때 취할 수 있는 방법 ( Best Practices)
+1. Planning을 사전에 미리 해봐야합니다. (production 환경에 옮기기 전 로드 테스트(CPU,메모리 뿐만 아니라 네트워크 관점에서도..)를 거쳐 플래닝이 이루어 져야 합니다.)
+2. Public cloud의 경우에는 특정 region에 대해 Quota가 부족할 수 있기 때문에 multiple-region에서 사용할 수 있는 아키텍처가 필요합니다. 
+
+
+## 6. 네트워크 설정 오류  이슈 ( Network misconfiguration )
