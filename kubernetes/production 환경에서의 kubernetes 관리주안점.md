@@ -1,9 +1,10 @@
+CNCG 2020 세션들 중, 박인혜 님의 "Production 환경에서 고려해야 할 Kubernetes 이슈 및 해결 방법" 세션을 듣고, 정리한 내용들을 공유합니다.  
+개인적으로 굉장히 도움이 많은 되었고, 운영환경에서 쿠버네티스에 애플리케이션을 올릴 때의 Issue & Trouble shooting 방법이 꽤 상세히 정리되어있어, 
+앞으로도 두고두고 보게될 것 같아 정리하였습니다.
+
+해당 세션 동영상은 https://www.youtube.com/watch?v=Gx0_zXFg0m4&t=155s 에서 확인하실 수 있습니다.  
+
 # Production 환경에서 고려해야할 kubernetes 이슈 및 해결방법
-
-CNCG 2020 세션들 중, 박인혜 님의 "Production 환경에서 고려해야 할 Kubernetes 이슈 및 해결 방법" 세션을 듣고, 
-따로 정리를 해 두고 싶어 정리한 내용들을 공유합니다.  
-
-세션 동영상은 https://www.youtube.com/watch?v=Gx0_zXFg0m4&t=155s 에서 확인하실 수 있습니다.  
 
 Production에서 발생하는 kubernetes 이슈 ( Most common customer issues)
 * 메모리 과부하 이슈 ( Memory overload )
